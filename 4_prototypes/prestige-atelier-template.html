@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Atelier Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Crimson+Text:wght@400;600&family=Nothing+You+Could+Do&family=Carattere&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background-color: #F9F7F4;
+            color: #3A3A38;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 50px;
+        }
+
+        /* Header - Organic */
+        .header {
+            text-align: center;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .handwritten-accent {
+            font-family: 'Carattere', cursive;
+            font-size: 28px;
+            color: #C76846;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 32px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #3A3A38;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 15px;
+            color: #8B9A7E;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Crimson Text', serif;
+        }
+
+        /* Organic wave divider */
+        .wave-divider {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #C76846, transparent);
+            margin: 40px auto;
+            border-radius: 50%;
+        }
+
+        /* Section intro */
+        .section-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-intro .handwritten {
+            font-family: 'Carattere', cursive;
+            font-size: 24px;
+            color: #C76846;
+            margin-bottom: 20px;
+        }
+
+        .section-intro h2 {
+            font-family: 'Lora', serif;
+            font-size: 38px;
+            font-weight: 500;
+            color: #3A3A38;
+            margin-bottom: 20px;
+        }
+
+        .section-intro p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #5A5A58;
+        }
+
+        /* Prestation - Organic flow */
+        .prestation-atelier {
+            margin-bottom: 120px;
+        }
+
+        /* Layout 1: Image left, text wraps organically */
+        .prestation-organic-left {
+            display: grid;
+            grid-template-columns: 45% 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .prestation-image-organic {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #E8DED4 0%, #D4C8BC 100%);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            box-shadow: 0 10px 40px rgba(199, 104, 70, 0.08);
+            position: relative;
+        }
+
+        .prestation-image-organic::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid rgba(199, 104, 70, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .prestation-text-organic {
+            padding-top: 20px;
+        }
+
+        .prestation-text-organic .handwritten-small {
+            font-family: 'Carattere', cursive;
+            font-size: 20px;
+            color: #C76846;
+            margin-bottom: 12px;
+        }
+
+        .prestation-text-organic h3 {
+            font-family: 'Lora', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #3A3A38;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .prestation-text-organic p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #5A5A58;
+            margin-bottom: 28px;
+        }
+
+        .prestation-details-organic {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .detail-organic {
+            font-size: 14px;
+            color: #8B9A7E;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .detail-organic::before {
+            content: '◦';
+            position: absolute;
+            left: 0;
+            color: #C76846;
+            font-size: 18px;
+        }
+
+        .prestation-price-organic {
+            font-family: 'Lora', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: #3A3A38;
+        }
+
+        .prestation-price-organic::before {
+            content: '$';
+            font-family: 'Carattere', cursive;
+            font-size: 32px;
+            color: #C76846;
+            margin-right: 4px;
+        }
+
+        /* Layout 2: Image right, text wraps */
+        .prestation-organic-right {
+            display: grid;
+            grid-template-columns: 1fr 45%;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Layout 3: Two images side by side with text below */
+        .prestation-organic-double {
+            text-align: center;
+        }
+
+        .prestation-organic-double .handwritten-small {
+            font-family: 'Carattere', cursive;
+            font-size: 20px;
+            color: #C76846;
+            margin-bottom: 12px;
+        }
+
+        .prestation-organic-double h3 {
+            font-family: 'Lora', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #3A3A38;
+            margin-bottom: 40px;
+        }
+
+        .double-images {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .double-images .prestation-image-organic {
+            width: 420px;
+            height: 500px;
+        }
+
+        .prestation-organic-double p {
+            max-width: 700px;
+            margin: 0 auto 28px auto;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #5A5A58;
+        }
+
+        .prestation-organic-double .prestation-details-organic {
+            justify-content: center;
+        }
+
+        /* Moodboard - Organic grid */
+        .moodboard-atelier {
+            margin-top: 120px;
+        }
+
+        .moodboard-category-atelier {
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .category-header-atelier {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .category-header-atelier .handwritten {
+            font-family: 'Carattere', cursive;
+            font-size: 24px;
+            color: #C76846;
+            margin-bottom: 16px;
+        }
+
+        .category-header-atelier h3 {
+            font-family: 'Lora', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: #3A3A38;
+        }
+
+        /* Organic masonry-style grid */
+        .moodboard-organic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .moodboard-organic-grid .grid-item {
+            background: linear-gradient(135deg, #E8DED4 0%, #D4C8BC 100%);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+            box-shadow: 0 8px 30px rgba(199, 104, 70, 0.06);
+            position: relative;
+            z-index: 2;
+        }
+
+        .moodboard-organic-grid .grid-item::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px solid rgba(199, 104, 70, 0.1);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Varied heights for organic feel */
+        .moodboard-organic-grid .grid-item:nth-child(1) { aspect-ratio: 3/4; }
+        .moodboard-organic-grid .grid-item:nth-child(2) { aspect-ratio: 1/1; }
+        .moodboard-organic-grid .grid-item:nth-child(3) { aspect-ratio: 3/4; }
+        .moodboard-organic-grid .grid-item:nth-child(4) { aspect-ratio: 1/1; }
+        .moodboard-organic-grid .grid-item:nth-child(5) { aspect-ratio: 3/4; }
+        .moodboard-organic-grid .grid-item:nth-child(6) { aspect-ratio: 1/1; }
+
+        /* Quote - Organic grouping */
+        .quote-atelier {
+            margin-top: 120px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 70px 60px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F5 100%);
+            border-radius: 3px;
+            box-shadow: 0 20px 60px rgba(199, 104, 70, 0.08);
+            position: relative;
+        }
+
+        .quote-atelier::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(199, 104, 70, 0.12);
+            border-radius: 3px;
+            pointer-events: none;
+        }
+
+        .quote-header-atelier {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .quote-header-atelier .handwritten {
+            font-family: 'Carattere', cursive;
+            font-size: 28px;
+            color: #C76846;
+            margin-bottom: 16px;
+        }
+
+        .quote-header-atelier h2 {
+            font-family: 'Lora', serif;
+            font-size: 38px;
+            font-weight: 500;
+            color: #3A3A38;
+        }
+
+        .quote-category-atelier {
+            margin-bottom: 50px;
+        }
+
+        .quote-category-title-atelier {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #3A3A38;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(199, 104, 70, 0.2);
+        }
+
+        .quote-line-atelier {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #5A5A58;
+        }
+
+        .quote-line-atelier .amount {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            color: #3A3A38;
+        }
+
+        .quote-subtotal-atelier {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(139, 154, 126, 0.3);
+            font-weight: 600;
+        }
+
+        .quote-divider-atelier {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #C76846, transparent);
+            margin: 50px 0;
+        }
+
+        .quote-total-atelier {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Lora', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #3A3A38;
+            padding-top: 24px;
+            border-top: 2px solid #C76846;
+            margin-top: 24px;
+        }
+
+        .quote-note-atelier {
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #8B9A7E;
+            margin-top: 50px;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .prestation-organic-left,
+            .prestation-organic-right {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .double-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .double-images .prestation-image-organic {
+                width: 100%;
+                max-width: 420px;
+            }
+
+            .moodboard-organic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 30px;
+            }
+
+            .moodboard-organic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-atelier {
+                padding: 50px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="handwritten-accent">handcrafted with intention</div>
+            <div class="logo">SARAH BLOOMS</div>
+            <div class="tagline">Artisan Florals</div>
+            <div class="wave-divider"></div>
+        </div>
+
+        <!-- Section Intro -->
+        <div class="section-intro">
+            <div class="handwritten">seasonal & sustainable</div>
+            <h2>Ceremony Florals</h2>
+            <p>
+                Each piece thoughtfully crafted using seasonal blooms sourced from sustainable growers.
+                Our artisan approach honors the natural beauty of flowers while creating something uniquely yours.
+            </p>
+        </div>
+
+        <!-- Prestation 1: Image left, organic flow -->
+        <div class="prestation-atelier">
+            <div class="prestation-organic-left">
+                <div class="prestation-image-organic">
+                    [Bridal Bouquet Portrait 3:4<br>Natural light, textural]
+                </div>
+                <div class="prestation-text-organic">
+                    <div class="handwritten-small">handcrafted</div>
+                    <h3>Bridal Bouquet</h3>
+                    <p>
+                        A hand-tied bouquet crafted with intention, featuring seasonal blooms in their most beautiful form.
+                        Each stem is thoughtfully selected and arranged to reflect your personal style while honoring the
+                        natural character of the flowers. Finished with hand-dyed silk ribbon.
+                    </p>
+                    <div class="prestation-details-organic">
+                        <span class="detail-organic">Seasonal blooms</span>
+                        <span class="detail-organic">Hand-tied</span>
+                        <span class="detail-organic">Silk ribbon</span>
+                    </div>
+                    <div class="prestation-price-organic">350 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 2: Image right, organic flow -->
+        <div class="prestation-atelier">
+            <div class="prestation-organic-right">
+                <div class="prestation-text-organic">
+                    <div class="handwritten-small">installation piece</div>
+                    <h3>Ceremony Arch</h3>
+                    <p>
+                        A living installation that frames your vows in natural beauty. We work with the architecture of your
+                        space, using seasonal florals to create an organic backdrop that feels both intentional and effortless.
+                        Each installation is unique, crafted on-site to honor your venue's character.
+                    </p>
+                    <div class="prestation-details-organic">
+                        <span class="detail-organic">Seasonal florals</span>
+                        <span class="detail-organic">Site-specific</span>
+                        <span class="detail-organic">Organic design</span>
+                    </div>
+                    <div class="prestation-price-organic">3,500 AUD</div>
+                </div>
+                <div class="prestation-image-organic">
+                    [Ceremony Arch Landscape 4:3<br>Environmental, natural]
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 3: Two images, centered text -->
+        <div class="prestation-atelier">
+            <div class="prestation-organic-double">
+                <div class="handwritten-small">table styling</div>
+                <h3>Bridal Table</h3>
+
+                <div class="double-images">
+                    <div class="prestation-image-organic">
+                        [Bridal Table Detail 3:4]
+                    </div>
+                    <div class="prestation-image-organic">
+                        [Table Setting 3:4]
+                    </div>
+                </div>
+
+                <p>
+                    Your celebration table adorned with organic beauty. We create flowing arrangements that complement
+                    your table setting, using textural elements and seasonal blooms to craft a centerpiece that feels
+                    collected rather than constructed—naturally beautiful and thoughtfully made.
+                </p>
+
+                <div class="prestation-details-organic">
+                    <span class="detail-organic">Organic arrangement</span>
+                    <span class="detail-organic">Seasonal elements</span>
+                    <span class="detail-organic">Textural design</span>
+                </div>
+
+                <div class="prestation-price-organic">500 AUD</div>
+            </div>
+        </div>
+
+        <!-- Moodboard -->
+        <div class="moodboard-atelier">
+            <div class="wave-divider" style="margin-bottom: 80px;"></div>
+
+            <!-- Ceremony Category -->
+            <div class="moodboard-category-atelier">
+                <div class="category-header-atelier">
+                    <div class="handwritten">your vision</div>
+                    <h3>Ceremony Inspiration</h3>
+                </div>
+
+                <div class="moodboard-organic-grid">
+                    <div class="grid-item">[Image 1]</div>
+                    <div class="grid-item">[Image 2]</div>
+                    <div class="grid-item">[Image 3]</div>
+                    <div class="grid-item">[Image 4]</div>
+                    <div class="grid-item">[Image 5]</div>
+                    <div class="grid-item">[Image 6]</div>
+                </div>
+            </div>
+
+            <!-- Reception Category -->
+            <div class="moodboard-category-atelier">
+                <div class="category-header-atelier">
+                    <div class="handwritten">gathered beauty</div>
+                    <h3>Reception Inspiration</h3>
+                </div>
+
+                <div class="moodboard-organic-grid">
+                    <div class="grid-item">[Image 7]</div>
+                    <div class="grid-item">[Image 8]</div>
+                    <div class="grid-item">[Image 9]</div>
+                    <div class="grid-item">[Image 10]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-atelier">
+            <div class="quote-header-atelier">
+                <div class="handwritten">your investment</div>
+                <h2>Artisan Pricing</h2>
+            </div>
+
+            <div class="quote-category-atelier">
+                <div class="quote-category-title-atelier">Ceremony Florals</div>
+                <div class="quote-line-atelier">
+                    <span>Bridal Bouquet</span>
+                    <span class="amount">$350</span>
+                </div>
+                <div class="quote-line-atelier">
+                    <span>Bridesmaid Bouquets (4)</span>
+                    <span class="amount">$720</span>
+                </div>
+                <div class="quote-line-atelier">
+                    <span>Ceremony Arch Installation</span>
+                    <span class="amount">$3,500</span>
+                </div>
+                <div class="quote-line-atelier">
+                    <span>Boutonnières (8)</span>
+                    <span class="amount">$200</span>
+                </div>
+                <div class="quote-line-atelier">
+                    <span>Signing Table Arrangement</span>
+                    <span class="amount">$280</span>
+                </div>
+                <div class="quote-line-atelier quote-subtotal-atelier">
+                    <span>Ceremony Subtotal</span>
+                    <span class="amount">$5,050</span>
+                </div>
+            </div>
+
+            <div class="quote-category-atelier">
+                <div class="quote-category-title-atelier">Reception Florals</div>
+                <div class="quote-line-atelier">
+                    <span>Centerpieces (12 tables)</span>
+                    <span class="amount">$2,640</span>
+                </div>
+                <div class="quote-line-atelier">
+                    <span>Bridal Table Feature</span>
+                    <span class="amount">$500</span>
+                </div>
+                <div class="quote-line-atelier">
+                    <span>Cake Flowers</span>
+                    <span class="amount">$180</span>
+                </div>
+                <div class="quote-line-atelier quote-subtotal-atelier">
+                    <span>Reception Subtotal</span>
+                    <span class="amount">$3,320</span>
+                </div>
+            </div>
+
+            <div class="quote-divider-atelier"></div>
+
+            <div class="quote-line-atelier">
+                <span>Subtotal</span>
+                <span class="amount">$8,370</span>
+            </div>
+            <div class="quote-line-atelier">
+                <span>GST (10%)</span>
+                <span class="amount">$837</span>
+            </div>
+
+            <div class="quote-total-atelier">
+                <span>TOTAL</span>
+                <span>$9,207 AUD</span>
+            </div>
+
+            <p class="quote-note-atelier">
+                This investment reflects the artisan nature of our work—each piece thoughtfully crafted<br>
+                using seasonal, sustainably-sourced blooms. Final details will be refined during our<br>
+                consultation to ensure every element honors your vision.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

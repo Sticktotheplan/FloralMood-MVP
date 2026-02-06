@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAF8;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #E5E5E0;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .page-number {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background-color: #E5E5E0;
+            margin-bottom: 20px;
+        }
+
+        /* Prestation Block */
+        .prestation {
+            margin-bottom: 80px;
+        }
+
+        .prestation-content {
+            display: grid;
+            grid-template-columns: 45% 50%;
+            gap: 5%;
+            align-items: center;
+        }
+
+        .prestation:nth-child(even) .prestation-content {
+            grid-template-columns: 50% 45%;
+            direction: rtl;
+        }
+
+        .prestation:nth-child(even) .prestation-text {
+            direction: ltr;
+        }
+
+        .prestation-image {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .prestation-image:hover {
+            transform: scale(1.05);
+        }
+
+        .prestation-image.landscape {
+            aspect-ratio: 4/3;
+        }
+
+        .prestation-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .prestation-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .prestation-details {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .prestation-details li {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .prestation-details li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #D4A5A5;
+        }
+
+        .prestation-price {
+            font-family: 'DM Mono', monospace;
+            font-size: 18px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        /* Moodboard Section */
+        .moodboard-section {
+            margin-top: 100px;
+        }
+
+        .moodboard-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .moodboard-category {
+            margin-bottom: 80px;
+        }
+
+        .category-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 60vh;
+            background: linear-gradient(135deg, #e8d8d8 0%, #f0e6e6 100%);
+            border-radius: 2px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .grid-image {
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            margin-top: 100px;
+            padding: 60px 80px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .quote-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .quote-category {
+            border-top: 2px solid #1a1a1a;
+            padding-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .quote-category-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .quote-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 15px;
+        }
+
+        .quote-item {
+            color: #333;
+        }
+
+        .quote-amount {
+            font-family: 'DM Mono', monospace;
+            font-weight: 500;
+        }
+
+        .quote-subtotal {
+            border-top: 1px solid #E5E5E0;
+            margin-top: 12px;
+            padding-top: 12px;
+            font-weight: 500;
+        }
+
+        .quote-total-section {
+            border-top: 2px solid #1a1a1a;
+            margin-top: 40px;
+            padding-top: 30px;
+        }
+
+        .quote-total {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'DM Mono', monospace;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .quote-note {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .prestation-content,
+            .prestation:nth-child(even) .prestation-content {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quote-section {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">SARAH BLOOMS</div>
+            <div class="page-number">Page 3 of 8</div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="section-title">
+            <div class="section-divider"></div>
+            CEREMONY FLORALS
+        </div>
+
+        <!-- Prestation 1: Bridal Bouquet -->
+        <div class="prestation">
+            <div class="prestation-content">
+                <div class="prestation-image">
+                    [Bridal Bouquet Portrait 2:3]
+                </div>
+                <div class="prestation-text">
+                    <h2>Bridal Bouquet</h2>
+                    <p class="prestation-description">
+                        A hand-tied garden bouquet featuring seasonal roses, peonies, and eucalyptus with flowing silk ribbons. Designed to complement your romantic style.
+                    </p>
+                    <ul class="prestation-details">
+                        <li>Premium garden roses</li>
+                        <li>Silk ribbon finish</li>
+                        <li>Seasonal blooms</li>
+                    </ul>
+                    <div class="prestation-price">$350 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 2: Ceremony Arch -->
+        <div class="prestation">
+            <div class="prestation-content">
+                <div class="prestation-image landscape">
+                    [Ceremony Arch Landscape 4:3]
+                </div>
+                <div class="prestation-text">
+                    <h2>Ceremony Arch</h2>
+                    <p class="prestation-description">
+                        A dramatic full ceremony arch with cascading seasonal florals, creating an unforgettable backdrop for your vows and ceremony moments.
+                    </p>
+                    <ul class="prestation-details">
+                        <li>Full arch coverage</li>
+                        <li>Seasonal premium blooms</li>
+                        <li>Professional installation</li>
+                    </ul>
+                    <div class="prestation-price">$3,500 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 3: Signing Table -->
+        <div class="prestation">
+            <div class="prestation-content">
+                <div class="prestation-image landscape">
+                    [Signing Table Landscape 4:3]
+                </div>
+                <div class="prestation-text">
+                    <h2>Signing Table</h2>
+                    <p class="prestation-description">
+                        An elegant arrangement for your signing table, featuring complementary blooms that frame your ceremony documents beautifully.
+                    </p>
+                    <ul class="prestation-details">
+                        <li>Coordinated with ceremony florals</li>
+                        <li>Compact elegant design</li>
+                        <li>Photo-ready styling</li>
+                    </ul>
+                    <div class="prestation-price">$280 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moodboard Section -->
+        <div class="moodboard-section">
+            <h1 class="moodboard-title">Your Moodboard</h1>
+
+            <div class="moodboard-category">
+                <div class="category-label">CEREMONY</div>
+                <div class="hero-image">[Hero Image: Ceremony Wide Shot - 1200x720px]</div>
+                <div class="image-grid">
+                    <div class="grid-image">[Image 1]</div>
+                    <div class="grid-image">[Image 2]</div>
+                    <div class="grid-image">[Image 3]</div>
+                    <div class="grid-image">[Image 4]</div>
+                    <div class="grid-image">[Image 5]</div>
+                    <div class="grid-image">[Image 6]</div>
+                </div>
+            </div>
+
+            <div class="moodboard-category">
+                <div class="category-label">RECEPTION</div>
+                <div class="hero-image">[Hero Image: Reception Wide Shot - 1200x720px]</div>
+                <div class="image-grid">
+                    <div class="grid-image">[Image 7]</div>
+                    <div class="grid-image">[Image 8]</div>
+                    <div class="grid-image">[Image 9]</div>
+                    <div class="grid-image">[Image 10]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <h1 class="quote-title">Your Investment</h1>
+
+            <div class="quote-category">
+                <div class="quote-category-title">Ceremony Florals</div>
+                <div class="quote-line">
+                    <span class="quote-item">Bridal Bouquet</span>
+                    <span class="quote-amount">$350</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">Bridesmaid Bouquets (4×$180)</span>
+                    <span class="quote-amount">$720</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">Ceremony Arch - Full</span>
+                    <span class="quote-amount">$3,500</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">Boutonnières (8×$25)</span>
+                    <span class="quote-amount">$200</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">Signing Table</span>
+                    <span class="quote-amount">$280</span>
+                </div>
+                <div class="quote-line quote-subtotal">
+                    <span class="quote-item">Ceremony Subtotal</span>
+                    <span class="quote-amount">$5,050</span>
+                </div>
+            </div>
+
+            <div class="quote-category">
+                <div class="quote-category-title">Reception Florals</div>
+                <div class="quote-line">
+                    <span class="quote-item">Centerpieces (12×$220)</span>
+                    <span class="quote-amount">$2,640</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">Bridal Table Feature</span>
+                    <span class="quote-amount">$500</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">Cake Flowers</span>
+                    <span class="quote-amount">$180</span>
+                </div>
+                <div class="quote-line quote-subtotal">
+                    <span class="quote-item">Reception Subtotal</span>
+                    <span class="quote-amount">$3,320</span>
+                </div>
+            </div>
+
+            <div class="quote-total-section">
+                <div class="quote-line">
+                    <span class="quote-item">Subtotal</span>
+                    <span class="quote-amount">$8,370</span>
+                </div>
+                <div class="quote-line">
+                    <span class="quote-item">GST (10%)</span>
+                    <span class="quote-amount">$837</span>
+                </div>
+                <div class="quote-total">
+                    <span>TOTAL</span>
+                    <span>$9,207 AUD</span>
+                </div>
+            </div>
+
+            <p class="quote-note">
+                This pricing is an estimate based on your selections. Final quote will be confirmed after our consultation to ensure we perfectly match your vision and budget.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

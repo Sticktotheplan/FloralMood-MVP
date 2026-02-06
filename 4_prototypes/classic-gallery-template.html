@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Gallery Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 100px 80px;
+        }
+
+        /* Minimal Header */
+        .header {
+            margin-bottom: 120px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .logo {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        /* Section Label - Minimal */
+        .section-label {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 80px;
+        }
+
+        /* Prestation - Large Image Focus */
+        .prestation-gallery {
+            margin-bottom: 140px;
+        }
+
+        /* Single large image */
+        .prestation-single-large {
+            margin-bottom: 30px;
+        }
+
+        .image-large {
+            width: 100%;
+            max-width: 900px;
+            height: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* Gallery label - minimal */
+        .gallery-label {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0 20px;
+        }
+
+        .gallery-label-left h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+
+        .gallery-label-left p {
+            font-size: 13px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        .gallery-label-right {
+            font-size: 18px;
+            font-weight: 400;
+            color: #000000;
+            white-space: nowrap;
+        }
+
+        /* Diptych - Two images side by side */
+        .prestation-diptych {
+            margin-bottom: 30px;
+        }
+
+        .diptych-images {
+            display: flex;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+        }
+
+        .diptych-images .image-medium {
+            flex: 1;
+            height: 600px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        .diptych-label {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0 20px;
+        }
+
+        .diptych-label-left h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+
+        .diptych-label-left p {
+            font-size: 13px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .diptych-label-right {
+            font-size: 18px;
+            font-weight: 400;
+            color: #000000;
+        }
+
+        /* Portrait format */
+        .prestation-portrait {
+            margin-bottom: 30px;
+        }
+
+        .image-portrait {
+            width: 600px;
+            height: 800px;
+            margin: 0 auto 30px auto;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        .portrait-label {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .portrait-label h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        .portrait-label p {
+            font-size: 13px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .portrait-label .price {
+            font-size: 18px;
+            font-weight: 400;
+            color: #000000;
+        }
+
+        /* Moodboard - Gallery Grid */
+        .moodboard-gallery {
+            margin-top: 160px;
+        }
+
+        .moodboard-section-gallery {
+            margin-bottom: 120px;
+        }
+
+        .moodboard-section-gallery .section-label {
+            margin-bottom: 60px;
+        }
+
+        .gallery-grid-clean {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid-clean .grid-item {
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        /* Quote - Minimal Invoice Style */
+        .quote-gallery {
+            margin-top: 160px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 60px;
+            border: 1px solid #E5E5E5;
+            background: #FAFAFA;
+        }
+
+        .quote-gallery-header {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .quote-gallery-header h2 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        .quote-category-gallery {
+            margin-bottom: 40px;
+        }
+
+        .quote-category-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        .quote-line-gallery {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #333;
+            font-weight: 300;
+        }
+
+        .quote-line-gallery .item {
+            flex: 1;
+        }
+
+        .quote-line-gallery .amount {
+            font-weight: 400;
+            color: #000;
+        }
+
+        .quote-subtotal-gallery {
+            border-top: 1px solid #E5E5E5;
+            margin-top: 12px;
+            padding-top: 12px;
+            font-weight: 400;
+        }
+
+        .quote-divider-gallery {
+            height: 1px;
+            background: #000;
+            margin: 40px 0 30px 0;
+        }
+
+        .quote-total-gallery {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+            margin-top: 20px;
+        }
+
+        .quote-note-gallery {
+            margin-top: 50px;
+            font-size: 11px;
+            font-weight: 300;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 80px 50px;
+            }
+
+            .diptych-images {
+                flex-direction: column;
+            }
+
+            .diptych-images .image-medium {
+                height: 500px;
+            }
+
+            .gallery-grid-clean {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 30px;
+            }
+
+            .image-large {
+                height: 500px;
+            }
+
+            .image-portrait {
+                width: 100%;
+                height: 600px;
+            }
+
+            .gallery-grid-clean {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-gallery {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">SARAH BLOOMS</div>
+        </div>
+
+        <!-- Section Label -->
+        <div class="section-label">CEREMONY FLORALS</div>
+
+        <!-- Prestation 1: Single Large Image -->
+        <div class="prestation-gallery">
+            <div class="prestation-single-large">
+                <div class="image-large">
+                    [Bridal Bouquet — Large Format 900x700px]
+                </div>
+                <div class="gallery-label">
+                    <div class="gallery-label-left">
+                        <h3>Bridal Bouquet</h3>
+                        <p>Hand-tied seasonal blooms with silk ribbon. Each bouquet is crafted to complement your style and wedding aesthetic.</p>
+                    </div>
+                    <div class="gallery-label-right">$350 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 2: Diptych (Two Images) -->
+        <div class="prestation-gallery">
+            <div class="prestation-diptych">
+                <div class="diptych-images">
+                    <div class="image-medium">
+                        [Ceremony Arch Wide Shot]
+                    </div>
+                    <div class="image-medium">
+                        [Ceremony Arch Detail]
+                    </div>
+                </div>
+                <div class="diptych-label">
+                    <div class="diptych-label-left">
+                        <h3>Ceremony Arch</h3>
+                        <p>Full ceremony installation with seasonal florals. Designed to complement your venue and create a beautiful backdrop for your vows.</p>
+                    </div>
+                    <div class="diptych-label-right">$3,500 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 3: Portrait Format -->
+        <div class="prestation-gallery">
+            <div class="prestation-portrait">
+                <div class="image-portrait">
+                    [Bridal Table Portrait 600x800px]
+                </div>
+                <div class="portrait-label">
+                    <h3>Bridal Table</h3>
+                    <p>Statement centerpiece for your reception table. Featuring premium seasonal blooms arranged to create visual impact throughout your celebration.</p>
+                    <div class="price">$500 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 4: Single Large Again -->
+        <div class="prestation-gallery">
+            <div class="prestation-single-large">
+                <div class="image-large">
+                    [Centerpiece Tablescape — 900x700px]
+                </div>
+                <div class="gallery-label">
+                    <div class="gallery-label-left">
+                        <h3>Centerpieces</h3>
+                        <p>Guest table arrangements designed to complement your reception aesthetic. Twelve unique pieces coordinated for visual harmony.</p>
+                    </div>
+                    <div class="gallery-label-right">$2,640 AUD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moodboard -->
+        <div class="moodboard-gallery">
+            <!-- Ceremony Section -->
+            <div class="moodboard-section-gallery">
+                <div class="section-label">CEREMONY</div>
+                <div class="gallery-grid-clean">
+                    <div class="grid-item">[1]</div>
+                    <div class="grid-item">[2]</div>
+                    <div class="grid-item">[3]</div>
+                    <div class="grid-item">[4]</div>
+                    <div class="grid-item">[5]</div>
+                    <div class="grid-item">[6]</div>
+                </div>
+            </div>
+
+            <!-- Reception Section -->
+            <div class="moodboard-section-gallery">
+                <div class="section-label">RECEPTION</div>
+                <div class="gallery-grid-clean">
+                    <div class="grid-item">[7]</div>
+                    <div class="grid-item">[8]</div>
+                    <div class="grid-item">[9]</div>
+                    <div class="grid-item">[10]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-gallery">
+            <div class="quote-gallery-header">
+                <h2>Investment</h2>
+            </div>
+
+            <div class="quote-category-gallery">
+                <div class="quote-category-label">Ceremony Florals</div>
+                <div class="quote-line-gallery">
+                    <span class="item">Bridal Bouquet</span>
+                    <span class="amount">$350</span>
+                </div>
+                <div class="quote-line-gallery">
+                    <span class="item">Bridesmaid Bouquets (4)</span>
+                    <span class="amount">$720</span>
+                </div>
+                <div class="quote-line-gallery">
+                    <span class="item">Ceremony Arch</span>
+                    <span class="amount">$3,500</span>
+                </div>
+                <div class="quote-line-gallery">
+                    <span class="item">Boutonnières (8)</span>
+                    <span class="amount">$200</span>
+                </div>
+                <div class="quote-line-gallery">
+                    <span class="item">Signing Table</span>
+                    <span class="amount">$280</span>
+                </div>
+                <div class="quote-line-gallery quote-subtotal-gallery">
+                    <span class="item">Ceremony Subtotal</span>
+                    <span class="amount">$5,050</span>
+                </div>
+            </div>
+
+            <div class="quote-category-gallery">
+                <div class="quote-category-label">Reception Florals</div>
+                <div class="quote-line-gallery">
+                    <span class="item">Centerpieces (12)</span>
+                    <span class="amount">$2,640</span>
+                </div>
+                <div class="quote-line-gallery">
+                    <span class="item">Bridal Table Feature</span>
+                    <span class="amount">$500</span>
+                </div>
+                <div class="quote-line-gallery">
+                    <span class="item">Cake Flowers</span>
+                    <span class="amount">$180</span>
+                </div>
+                <div class="quote-line-gallery quote-subtotal-gallery">
+                    <span class="item">Reception Subtotal</span>
+                    <span class="amount">$3,320</span>
+                </div>
+            </div>
+
+            <div class="quote-divider-gallery"></div>
+
+            <div class="quote-line-gallery">
+                <span class="item">Subtotal</span>
+                <span class="amount">$8,370</span>
+            </div>
+            <div class="quote-line-gallery">
+                <span class="item">GST (10%)</span>
+                <span class="amount">$837</span>
+            </div>
+
+            <div class="quote-total-gallery">
+                <span>TOTAL</span>
+                <span>$9,207 AUD</span>
+            </div>
+
+            <p class="quote-note-gallery">
+                This investment reflects the scope of florals outlined above. Final details and pricing will be confirmed during our consultation to ensure alignment with your vision and venue requirements.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

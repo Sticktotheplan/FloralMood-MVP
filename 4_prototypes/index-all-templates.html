@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloralMood - All 6 Templates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 8px;
+        }
+
+        .header .count {
+            font-size: 16px;
+            opacity: 0.85;
+        }
+
+        /* Family Headers */
+        .family-header {
+            color: white;
+            margin: 80px 0 30px 0;
+            text-align: center;
+        }
+
+        .family-header h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .family-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .template-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .template-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .template-badge.new {
+            background: #FF6B6B;
+        }
+
+        .template-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .classic-icon {
+            background: linear-gradient(135deg, #FAFAF8 0%, #E5E5E0 100%);
+            border: 2px solid #D4A5A5;
+        }
+
+        .heritage-icon {
+            background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE3 100%);
+            border: 2px solid #6B2C2C;
+        }
+
+        .prestige-icon {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+        }
+
+        .template-card h3 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .template-card .subtitle {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .template-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features li {
+            padding: 6px 0;
+            color: #444;
+            font-size: 13px;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: transform 0.2s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .view-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            margin-top: 60px;
+        }
+
+        .comparison-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f8f8;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+
+        td {
+            color: #444;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-classic { background: #FAFAF8; color: #666; border: 1px solid #D4A5A5; }
+        .tag-heritage { background: #FAF8F5; color: #6B2C2C; border: 1px solid #6B2C2C; }
+        .tag-prestige { background: #000; color: #fff; }
+
+        @media (max-width: 1200px) {
+            .templates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+
+            .comparison-section {
+                padding: 30px 20px;
+            }
+
+            table {
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FloralMood Templates</h1>
+            <p>Premium Wedding Proposal Templates</p>
+            <p class="count">6 Templates • Covers $3K-$50K+ Weddings</p>
+        </div>
+
+        <!-- CLASSIC FAMILY -->
+        <div class="family-header">
+            <h2>Classic Family</h2>
+            <p>Modern Professional • $3K-30K Weddings</p>
+        </div>
+
+        <div class="templates-grid">
+            <!-- Classic Grid -->
+            <div class="template-card">
+                <div class="template-icon classic-icon">📋</div>
+                <h3>Classic Grid</h3>
+                <p class="subtitle">Modern Professional</p>
+                <p>Structured grid layout with clear 50/50 balance. Perfect for florists serving diverse wedding styles.</p>
+                <ul class="features">
+                    <li>Clean grid layout</li>
+                    <li>Warm white background</li>
+                    <li>Scannable structure</li>
+                    <li>Target: $3K-8K</li>
+                </ul>
+                <a href="classic-template.html" class="view-button" target="_blank">View Template →</a>
+            </div>
+
+            <!-- Classic Warm -->
+            <div class="template-card">
+                <div class="template-icon classic-icon">🌸</div>
+                <h3>Classic Warm</h3>
+                <p class="subtitle">Romantic Garden</p>
+                <p>Soft, romantic aesthetic with warm tones. Ideal for garden and romantic wedding styles.</p>
+                <ul class="features">
+                    <li>Soft edges, rounded</li>
+                    <li>Warm palette</li>
+                    <li>Script + Serif mix</li>
+                    <li>Target: $3K-8K</li>
+                </ul>
+                <a href="classic-template.html" class="view-button" target="_blank">View Template →</a>
+            </div>
+
+            <!-- Classic Heritage -->
+            <div class="template-card">
+                <div class="template-badge new">NEW</div>
+                <div class="template-icon heritage-icon">🏛️</div>
+                <h3>Classic Heritage</h3>
+                <p class="subtitle">Timeless Elegance</p>
+                <p>Refined, symmetrical design for estate weddings. Traditional elegance elevated.</p>
+                <ul class="features">
+                    <li>Symmetrical centered</li>
+                    <li>Classic serif fonts</li>
+                    <li>Heritage aesthetic</li>
+                    <li>Target: $10K-30K</li>
+                </ul>
+                <a href="classic-heritage-template.html" class="view-button" target="_blank">View Template →</a>
+            </div>
+        </div>
+
+        <!-- PRESTIGE FAMILY -->
+        <div class="family-header">
+            <h2>Prestige Family</h2>
+            <p>Luxury Editorial • $8K-$50K+ Weddings</p>
+        </div>
+
+        <div class="templates-grid">
+            <!-- Prestige Minimal -->
+            <div class="template-card">
+                <div class="template-badge new">NEW</div>
+                <div class="template-icon prestige-icon">◇</div>
+                <h3>Prestige Minimal</h3>
+                <p class="subtitle">Ultra-Refined</p>
+                <p>95% white space, 5% precision. Museum-quality restraint for the most discerning clients.</p>
+                <ul class="features">
+                    <li>Maximum white space</li>
+                    <li>Micro typography (7-11px)</li>
+                    <li>Monochrome palette</li>
+                    <li>Target: $15K-40K</li>
+                </ul>
+                <a href="prestige-minimal-template.html" class="view-button" target="_blank">View Template →</a>
+            </div>
+
+            <!-- Prestige Soft Luxe -->
+            <div class="template-card">
+                <div class="template-icon prestige-icon">💎</div>
+                <h3>Prestige Soft Luxe</h3>
+                <p class="subtitle">Refined Luxury</p>
+                <p>Elegant sophistication with soft luxury feel. Perfect for estate and refined celebrations.</p>
+                <ul class="features">
+                    <li>Soft luxury aesthetic</li>
+                    <li>Elegant serif fonts</li>
+                    <li>Generous spacing</li>
+                    <li>Target: $10K-25K</li>
+                </ul>
+                <a href="prestige-template.html" class="view-button" target="_blank">View Template →</a>
+            </div>
+
+            <!-- Prestige Bold -->
+            <div class="template-card">
+                <div class="template-badge new">NEW</div>
+                <div class="template-icon prestige-icon">⚡</div>
+                <h3>Prestige Bold</h3>
+                <p class="subtitle">Dramatic Statement</p>
+                <p>Unapologetic drama for bold installations. Maximum impact, zero subtlety.</p>
+                <ul class="features">
+                    <li>Massive typography</li>
+                    <li>90% image space</li>
+                    <li>Dramatic contrast</li>
+                    <li>Target: $30K+</li>
+                </ul>
+                <a href="prestige-bold-template.html" class="view-button" target="_blank">View Template →</a>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-section">
+            <h2>Template Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Template</th>
+                        <th>Style</th>
+                        <th>Layout</th>
+                        <th>Typography</th>
+                        <th>Target Budget</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tag-classic">Classic Grid</span></td>
+                        <td>Modern Professional</td>
+                        <td>50/50 Grid</td>
+                        <td>Cormorant + Inter</td>
+                        <td>$3K-8K</td>
+                        <td>Diverse styles</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-classic">Classic Warm</span></td>
+                        <td>Romantic Garden</td>
+                        <td>Soft Grid</td>
+                        <td>Script + Serif</td>
+                        <td>$3K-8K</td>
+                        <td>Garden, romantic</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-heritage">Heritage</span></td>
+                        <td>Timeless Elegance</td>
+                        <td>Symmetrical</td>
+                        <td>Baskerville + Garamond</td>
+                        <td>$10K-30K</td>
+                        <td>Estate, traditional</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-prestige">Minimal</span></td>
+                        <td>Ultra-Refined</td>
+                        <td>Centered + White Space</td>
+                        <td>Inter 200-400wt</td>
+                        <td>$15K-40K</td>
+                        <td>Museum, minimal</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-prestige">Soft Luxe</span></td>
+                        <td>Refined Luxury</td>
+                        <td>Asymmetric</td>
+                        <td>Playfair + Spectral</td>
+                        <td>$10K-25K</td>
+                        <td>Estate, refined</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-prestige">Bold</span></td>
+                        <td>Dramatic Statement</td>
+                        <td>Full-bleed 90%</td>
+                        <td>Oswald Display</td>
+                        <td>$30K+</td>
+                        <td>Luxury, dramatic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

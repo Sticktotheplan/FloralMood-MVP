@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloralMood Templates Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .template-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .template-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .classic-icon {
+            background: linear-gradient(135deg, #FAFAF8 0%, #E5E5E0 100%);
+            border: 2px solid #D4A5A5;
+        }
+
+        .prestige-icon {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+        }
+
+        .template-card h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .template-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .view-button:hover {
+            transform: scale(1.05);
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .comparison-table h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f8f8;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            font-size: 14px;
+            color: #444;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-classic {
+            background: #FAFAF8;
+            color: #666;
+            border: 1px solid #D4A5A5;
+        }
+
+        .tag-prestige {
+            background: #000;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FloralMood Templates</h1>
+            <p>Compare our two premium wedding proposal templates</p>
+        </div>
+
+        <div class="templates-grid">
+            <!-- Classic Template -->
+            <div class="template-card">
+                <div class="template-icon classic-icon">📋</div>
+                <h2>Classic</h2>
+                <p>Modern and structured design with clear grid layout. Perfect for professional florists serving diverse wedding styles and budgets.</p>
+                <ul class="features">
+                    <li>Clean 50/50 grid layout</li>
+                    <li>Warm white background</li>
+                    <li>Structured, scannable</li>
+                    <li>Detailed table pricing</li>
+                    <li>Target: $3K-8K weddings</li>
+                </ul>
+                <a href="classic-template.html" class="view-button" target="_blank">View Classic Template →</a>
+            </div>
+
+            <!-- Prestige Template -->
+            <div class="template-card">
+                <div class="template-icon prestige-icon">✨</div>
+                <h2>Prestige</h2>
+                <p>Luxurious and sophisticated editorial design with asymmetric compositions. Perfect for high-end florists targeting luxury weddings.</p>
+                <ul class="features">
+                    <li>Asymmetric editorial layout</li>
+                    <li>Pure white, dramatic</li>
+                    <li>Magazine-style spreads</li>
+                    <li>Minimal luxe pricing</li>
+                    <li>Target: $8K+ weddings</li>
+                </ul>
+                <a href="prestige-template.html" class="view-button" target="_blank">View Prestige Template →</a>
+            </div>
+        </div>
+
+        <div class="comparison-table">
+            <h3>Template Comparison</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th><span class="tag tag-classic">Classic</span></th>
+                        <th><span class="tag tag-prestige">Prestige</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Philosophy</strong></td>
+                        <td>Professional warm</td>
+                        <td>Exclusive luxury</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Layout</strong></td>
+                        <td>12-col structured grid</td>
+                        <td>Asymmetric freedom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Image Space</strong></td>
+                        <td>50-60%</td>
+                        <td>70-80%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Whitespace</strong></td>
+                        <td>40-60px spacing</td>
+                        <td>60-150px spacing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Typography</strong></td>
+                        <td>Cormorant + Inter</td>
+                        <td>Playfair + Spectral + Cinzel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colors</strong></td>
+                        <td>Warm neutrals (#FAFAF8)</td>
+                        <td>Pure B&W (#FFFFFF)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Text Length</strong></td>
+                        <td>50-80 words</td>
+                        <td>100-150 words</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quote Style</strong></td>
+                        <td>Detailed table</td>
+                        <td>Minimal summary</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inspiration</strong></td>
+                        <td>Kinfolk, Studio Choo, Notion</td>
+                        <td>Vogue, Harper's Bazaar, Aman</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Target Budget</strong></td>
+                        <td>$3K-8K AUD</td>
+                        <td>$8K+ AUD</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

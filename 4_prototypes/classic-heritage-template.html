@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Heritage Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:wght@400;500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-color: #FAF8F5;
+            color: #2C2C2C;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 60px;
+        }
+
+        /* Header with ornament */
+        .header {
+            text-align: center;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #D4CFC7;
+            margin-bottom: 80px;
+        }
+
+        .ornament {
+            font-size: 24px;
+            color: #6B2C2C;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #2C2C2C;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6B6B6B;
+        }
+
+        /* Section dividers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background-color: #6B2C2C;
+            margin: 0 auto 20px auto;
+        }
+
+        .section-subtitle {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #6B6B6B;
+        }
+
+        /* Prestation - Symmetrical Layout */
+        .prestation {
+            margin-bottom: 100px;
+        }
+
+        .prestation-title-centered {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2C2C2C;
+        }
+
+        .prestation-images-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .prestation-image-heritage {
+            width: 380px;
+            height: 500px;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            border: 1px solid #D4CFC7;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .prestation-description-centered {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #4A4A4A;
+        }
+
+        .prestation-details-centered {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #6B6B6B;
+        }
+
+        .detail-item:before {
+            content: "◆";
+            margin-right: 8px;
+            color: #6B2C2C;
+        }
+
+        .prestation-price-heritage {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #2C2C2C;
+        }
+
+        /* Single image centered */
+        .prestation-single {
+            margin-bottom: 100px;
+        }
+
+        .single-image-container {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .prestation-image-large {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, #e8d8d8 0%, #f0e6e6 100%);
+            border: 1px solid #D4CFC7;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Moodboard - Gallery Style */
+        .moodboard-heritage {
+            margin-top: 120px;
+        }
+
+        .moodboard-category-heritage {
+            margin-bottom: 100px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gallery-image {
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            border: 1px solid #D4CFC7;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Quote - Traditional Table */
+        .quote-heritage {
+            margin-top: 120px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 60px;
+            background: white;
+            border: 1px solid #D4CFC7;
+        }
+
+        .quote-ornament {
+            text-align: center;
+            font-size: 20px;
+            color: #6B2C2C;
+            margin-bottom: 30px;
+        }
+
+        .quote-title-heritage {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 36px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2C2C2C;
+        }
+
+        .quote-category-heritage {
+            margin-bottom: 40px;
+        }
+
+        .quote-category-title-heritage {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #6B2C2C;
+            color: #2C2C2C;
+        }
+
+        .quote-line-heritage {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 15px;
+            color: #4A4A4A;
+        }
+
+        .quote-line-heritage .item {
+            flex: 1;
+        }
+
+        .quote-line-heritage .amount {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .quote-subtotal-heritage {
+            border-top: 1px solid #D4CFC7;
+            margin-top: 16px;
+            padding-top: 16px;
+            font-weight: 500;
+        }
+
+        .quote-divider-heritage {
+            width: 100%;
+            height: 1px;
+            background: #6B2C2C;
+            margin: 50px 0 30px 0;
+        }
+
+        .quote-total-heritage {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            padding-top: 20px;
+            border-top: 2px solid #2C2C2C;
+            margin-top: 20px;
+        }
+
+        .quote-note-heritage {
+            text-align: center;
+            font-size: 14px;
+            font-style: italic;
+            color: #6B6B6B;
+            margin-top: 50px;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .prestation-images-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .prestation-image-heritage {
+                width: 100%;
+                max-width: 380px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .quote-heritage {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="ornament">❦</div>
+            <div class="logo">SARAH BLOOMS</div>
+            <div class="subtitle">Wedding Florals</div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="section-header">
+            <div class="divider"></div>
+            <h1 class="section-title">Ceremony Florals</h1>
+            <div class="section-subtitle">Timeless Elegance</div>
+        </div>
+
+        <!-- Prestation 1: Bridal Bouquet - Two Images -->
+        <div class="prestation">
+            <h2 class="prestation-title-centered">Bridal Bouquet</h2>
+
+            <div class="prestation-images-row">
+                <div class="prestation-image-heritage">
+                    [Bridal Bouquet Portrait 3:4]
+                </div>
+                <div class="prestation-image-heritage">
+                    [Bridal Bouquet Detail 3:4]
+                </div>
+            </div>
+
+            <p class="prestation-description-centered">
+                A timeless hand-tied bouquet featuring garden roses, peonies, and heritage blooms in classic ivory and blush, finished with French silk ribbon. Each bouquet is crafted to complement your gown and reflect your personal style with refined elegance.
+            </p>
+
+            <div class="prestation-details-centered">
+                <span class="detail-item">Premium garden roses</span>
+                <span class="detail-item">French silk ribbon</span>
+                <span class="detail-item">Classic styling</span>
+            </div>
+
+            <div class="prestation-price-heritage">$350 AUD</div>
+        </div>
+
+        <!-- Prestation 2: Ceremony Arch - Single Large -->
+        <div class="prestation-single">
+            <h2 class="prestation-title-centered">Ceremony Arch</h2>
+
+            <div class="single-image-container">
+                <div class="prestation-image-large">
+                    [Ceremony Arch Landscape 4:3]
+                </div>
+            </div>
+
+            <p class="prestation-description-centered">
+                A distinguished ceremony arch adorned with seasonal florals arranged in the classical tradition. This elegant installation creates a refined backdrop for your vows, featuring lush blooms in harmonious proportions that honor timeless wedding heritage.
+            </p>
+
+            <div class="prestation-details-centered">
+                <span class="detail-item">Full arch coverage</span>
+                <span class="detail-item">Seasonal blooms</span>
+                <span class="detail-item">Heritage styling</span>
+            </div>
+
+            <div class="prestation-price-heritage">$3,500 AUD</div>
+        </div>
+
+        <!-- Prestation 3: Bridal Table -->
+        <div class="prestation-single">
+            <h2 class="prestation-title-centered">Bridal Table</h2>
+
+            <div class="single-image-container">
+                <div class="prestation-image-large">
+                    [Bridal Table Landscape 16:9]
+                </div>
+            </div>
+
+            <p class="prestation-description-centered">
+                An exquisite centerpiece for your reception table, designed with classical proportions and refined elegance. Featuring premium seasonal florals arranged in the traditional manner, creating a distinguished focal point for your celebration.
+            </p>
+
+            <div class="prestation-details-centered">
+                <span class="detail-item">Classic design</span>
+                <span class="detail-item">Premium florals</span>
+                <span class="detail-item">Refined styling</span>
+            </div>
+
+            <div class="prestation-price-heritage">$500 AUD</div>
+        </div>
+
+        <!-- Moodboard -->
+        <div class="moodboard-heritage">
+            <div class="section-header">
+                <div class="divider"></div>
+                <h1 class="section-title">Your Moodboard</h1>
+                <div class="section-subtitle">Visual Inspiration</div>
+            </div>
+
+            <!-- Ceremony Gallery -->
+            <div class="moodboard-category-heritage">
+                <h3 class="prestation-title-centered" style="font-size: 24px; margin-bottom: 50px;">Ceremony</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-image">[Image 1]</div>
+                    <div class="gallery-image">[Image 2]</div>
+                    <div class="gallery-image">[Image 3]</div>
+                    <div class="gallery-image">[Image 4]</div>
+                    <div class="gallery-image">[Image 5]</div>
+                    <div class="gallery-image">[Image 6]</div>
+                </div>
+            </div>
+
+            <!-- Reception Gallery -->
+            <div class="moodboard-category-heritage">
+                <h3 class="prestation-title-centered" style="font-size: 24px; margin-bottom: 50px;">Reception</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-image">[Image 7]</div>
+                    <div class="gallery-image">[Image 8]</div>
+                    <div class="gallery-image">[Image 9]</div>
+                    <div class="gallery-image">[Image 10]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-heritage">
+            <div class="quote-ornament">❦</div>
+            <h1 class="quote-title-heritage">Your Investment</h1>
+
+            <div class="quote-category-heritage">
+                <div class="quote-category-title-heritage">Ceremony Florals</div>
+                <div class="quote-line-heritage">
+                    <span class="item">Bridal Bouquet</span>
+                    <span class="amount">$350</span>
+                </div>
+                <div class="quote-line-heritage">
+                    <span class="item">Bridesmaid Bouquets (4)</span>
+                    <span class="amount">$720</span>
+                </div>
+                <div class="quote-line-heritage">
+                    <span class="item">Ceremony Arch</span>
+                    <span class="amount">$3,500</span>
+                </div>
+                <div class="quote-line-heritage">
+                    <span class="item">Boutonnières (8)</span>
+                    <span class="amount">$200</span>
+                </div>
+                <div class="quote-line-heritage">
+                    <span class="item">Signing Table</span>
+                    <span class="amount">$280</span>
+                </div>
+                <div class="quote-line-heritage quote-subtotal-heritage">
+                    <span class="item">Ceremony Subtotal</span>
+                    <span class="amount">$5,050</span>
+                </div>
+            </div>
+
+            <div class="quote-category-heritage">
+                <div class="quote-category-title-heritage">Reception Florals</div>
+                <div class="quote-line-heritage">
+                    <span class="item">Centerpieces (12)</span>
+                    <span class="amount">$2,640</span>
+                </div>
+                <div class="quote-line-heritage">
+                    <span class="item">Bridal Table Feature</span>
+                    <span class="amount">$500</span>
+                </div>
+                <div class="quote-line-heritage">
+                    <span class="item">Cake Flowers</span>
+                    <span class="amount">$180</span>
+                </div>
+                <div class="quote-line-heritage quote-subtotal-heritage">
+                    <span class="item">Reception Subtotal</span>
+                    <span class="amount">$3,320</span>
+                </div>
+            </div>
+
+            <div class="quote-divider-heritage"></div>
+
+            <div class="quote-line-heritage">
+                <span class="item">Subtotal</span>
+                <span class="amount">$8,370</span>
+            </div>
+            <div class="quote-line-heritage">
+                <span class="item">GST (10%)</span>
+                <span class="amount">$837</span>
+            </div>
+
+            <div class="quote-total-heritage">
+                <span>TOTAL</span>
+                <span>$9,207 AUD</span>
+            </div>
+
+            <p class="quote-note-heritage">
+                This investment estimate reflects the timeless elegance of your selections.<br>
+                Final details will be refined during our consultation to ensure<br>
+                every element honors your vision with distinguished grace.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

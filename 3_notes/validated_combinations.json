@@ -1,0 +1,1035 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_date": "2026-02-06",
+    "total_combinations": 20,
+    "combinations_per_season": {
+      "spring": 5,
+      "summer": 5,
+      "autumn": 5,
+      "winter": 5
+    },
+    "usage_note": "These validated combinations are pre-tested floral arrangements that work aesthetically and are seasonally appropriate. Each includes specific ratios, colors, and style guidance."
+  },
+  "combinations": [
+    {
+      "id": 1,
+      "name": "Classic Spring Garden",
+      "description": "Timeless spring combination featuring soft pastels and delicate blooms with organic, flowing arrangement style",
+      "style_tags": ["romantic", "garden", "classic", "soft"],
+      "seasons": ["spring"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["soft_pink", "blush", "white", "lavender", "sage_green"],
+      "flowers": [
+        {
+          "name": "tulips",
+          "ratio": 30,
+          "colors": ["soft_pink", "white"],
+          "placement": "clustered in groups of 3-5 creating focal points",
+          "role": "focal"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 25,
+          "colors": ["blush", "white"],
+          "placement": "scattered throughout filling gaps",
+          "role": "focal"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 25,
+          "colors": ["sage_green"],
+          "placement": "trailing and creating organic flow",
+          "role": "foliage"
+        },
+        {
+          "name": "sweet_peas",
+          "ratio": 15,
+          "colors": ["lavender", "soft_pink"],
+          "placement": "delicate accents upper portions",
+          "role": "accent"
+        },
+        {
+          "name": "ferns",
+          "ratio": 5,
+          "colors": ["green"],
+          "placement": "textural accents base",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "moderate_30",
+      "arrangement_density": "airy",
+      "price_range": "mid_premium",
+      "estimated_cost_per_arrangement": 85.00,
+      "best_for_prestations": ["ceremony_arch", "bridal_bouquet_cascading", "centerpiece_low", "aisle_markers"],
+      "venue_types": ["garden", "outdoor", "chapel", "vineyard"]
+    },
+    {
+      "id": 2,
+      "name": "Romantic Blush Spring",
+      "description": "Lush, romantic spring palette with abundant peonies and soft textures",
+      "style_tags": ["romantic", "luxe", "abundant", "dreamy"],
+      "seasons": ["spring", "early_summer"],
+      "arrangement_style": "romantic_abundant",
+      "color_palette": ["blush_pink", "ivory", "peach", "soft_lavender"],
+      "flowers": [
+        {
+          "name": "peonies",
+          "ratio": 40,
+          "colors": ["blush_pink", "ivory"],
+          "placement": "large focal clusters creating volume",
+          "role": "focal"
+        },
+        {
+          "name": "garden_roses",
+          "ratio": 25,
+          "colors": ["blush", "peach"],
+          "placement": "layered throughout supporting peonies",
+          "role": "focal"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 20,
+          "colors": ["ivory", "blush"],
+          "placement": "filling gaps and adding texture",
+          "role": "filler"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 10,
+          "colors": ["sage_green"],
+          "placement": "minimal greenery allowing flowers to dominate",
+          "role": "foliage"
+        },
+        {
+          "name": "sweet_peas",
+          "ratio": 5,
+          "colors": ["soft_lavender"],
+          "placement": "delicate trailing accents",
+          "role": "accent"
+        }
+      ],
+      "foliage_density": "light_10",
+      "arrangement_density": "lush_full",
+      "price_range": "luxury",
+      "estimated_cost_per_arrangement": 165.00,
+      "best_for_prestations": ["bridal_bouquet_round", "ceremony_arch_full", "sweetheart_table_runner"],
+      "venue_types": ["ballroom", "estate", "garden", "luxury_venue"]
+    },
+    {
+      "id": 3,
+      "name": "Fresh White Spring",
+      "description": "Clean, elegant all-white spring combination with varied textures",
+      "style_tags": ["classic", "elegant", "fresh", "timeless"],
+      "seasons": ["spring"],
+      "arrangement_style": "structured_architectural",
+      "color_palette": ["white", "cream", "ivory", "pale_green"],
+      "flowers": [
+        {
+          "name": "tulips",
+          "ratio": 35,
+          "colors": ["white"],
+          "placement": "structured rows or clusters",
+          "role": "focal"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 30,
+          "colors": ["ivory", "white"],
+          "placement": "filling evenly throughout",
+          "role": "focal"
+        },
+        {
+          "name": "lily_of_the_valley",
+          "ratio": 15,
+          "colors": ["white"],
+          "placement": "delicate cascading accents",
+          "role": "accent"
+        },
+        {
+          "name": "freesia",
+          "ratio": 10,
+          "colors": ["white"],
+          "placement": "scattered accent blooms",
+          "role": "accent"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 10,
+          "colors": ["pale_green", "silver"],
+          "placement": "minimal greenery collar",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_10",
+      "arrangement_density": "moderate",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 120.00,
+      "best_for_prestations": ["bridal_bouquet_round", "centerpiece_tall", "cake_flowers"],
+      "venue_types": ["ballroom", "chapel", "modern_venue", "classic_venue"]
+    },
+    {
+      "id": 4,
+      "name": "Pastel Dreamy Spring",
+      "description": "Soft, muted pastels with unique blooms and textural foliage",
+      "style_tags": ["romantic", "dreamy", "soft", "unique"],
+      "seasons": ["spring"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["dusty_pink", "lavender", "pale_yellow", "silvery_green"],
+      "flowers": [
+        {
+          "name": "hellebores",
+          "ratio": 30,
+          "colors": ["dusty_mauve", "pale_pink"],
+          "placement": "nodding blooms creating organic movement",
+          "role": "focal"
+        },
+        {
+          "name": "scabiosa",
+          "ratio": 25,
+          "colors": ["lavender", "dusty_pink"],
+          "placement": "airy throughout adding unique texture",
+          "role": "filler"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 20,
+          "colors": ["pale_yellow", "blush"],
+          "placement": "clustered focal points",
+          "role": "focal"
+        },
+        {
+          "name": "dusty_miller",
+          "ratio": 20,
+          "colors": ["silvery_grey"],
+          "placement": "soft foliage throughout",
+          "role": "foliage"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 5,
+          "colors": ["sage_green"],
+          "placement": "minimal accent greenery",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "moderate_25",
+      "arrangement_density": "airy",
+      "price_range": "mid_premium",
+      "estimated_cost_per_arrangement": 95.00,
+      "best_for_prestations": ["bridal_bouquet_cascading", "centerpiece_low", "cocktail_table_accents"],
+      "venue_types": ["garden", "outdoor", "bohemian_venue", "rustic"]
+    },
+    {
+      "id": 5,
+      "name": "Wildflower Meadow Spring",
+      "description": "Informal, natural spring wildflower mix with varied heights and textures",
+      "style_tags": ["boho", "wildflower", "natural", "informal"],
+      "seasons": ["spring", "early_summer"],
+      "arrangement_style": "wildflower_meadow",
+      "color_palette": ["mixed_pastels", "purple", "yellow", "white"],
+      "flowers": [
+        {
+          "name": "nigella",
+          "ratio": 25,
+          "colors": ["blue", "purple", "white"],
+          "placement": "airy throughout creating meadow feel",
+          "role": "filler"
+        },
+        {
+          "name": "cornflowers",
+          "ratio": 25,
+          "colors": ["blue", "purple"],
+          "placement": "scattered at varied heights",
+          "role": "accent"
+        },
+        {
+          "name": "daffodils",
+          "ratio": 20,
+          "colors": ["yellow", "white"],
+          "placement": "cheerful focal blooms",
+          "role": "focal"
+        },
+        {
+          "name": "Queen_Anne_lace",
+          "ratio": 15,
+          "colors": ["white"],
+          "placement": "delicate filler creating airiness",
+          "role": "filler"
+        },
+        {
+          "name": "grasses_mixed",
+          "ratio": 15,
+          "colors": ["green"],
+          "placement": "textural movement throughout",
+          "role": "structural"
+        }
+      ],
+      "foliage_density": "light_15",
+      "arrangement_density": "airy",
+      "price_range": "mid",
+      "estimated_cost_per_arrangement": 70.00,
+      "best_for_prestations": ["centerpiece_low", "aisle_markers", "cocktail_table_accents", "welcome_sign"],
+      "venue_types": ["outdoor", "barn", "garden", "field"]
+    },
+    {
+      "id": 6,
+      "name": "Romantic Garden Summer",
+      "description": "Classic summer romance with garden roses and soft blooms",
+      "style_tags": ["romantic", "garden", "soft", "timeless"],
+      "seasons": ["summer"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["blush_pink", "ivory", "peach", "sage_green"],
+      "flowers": [
+        {
+          "name": "garden_roses",
+          "ratio": 35,
+          "colors": ["blush", "ivory", "peach"],
+          "placement": "focal clusters asymmetrically positioned",
+          "role": "focal"
+        },
+        {
+          "name": "lisianthus",
+          "ratio": 25,
+          "colors": ["white", "blush"],
+          "placement": "layered throughout adding volume",
+          "role": "filler"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 20,
+          "colors": ["sage_green"],
+          "placement": "trailing and filling gaps organically",
+          "role": "foliage"
+        },
+        {
+          "name": "stock",
+          "ratio": 15,
+          "colors": ["white", "blush"],
+          "placement": "adding height and fragrance",
+          "role": "filler"
+        },
+        {
+          "name": "scabiosa",
+          "ratio": 5,
+          "colors": ["dusty_pink"],
+          "placement": "delicate accents",
+          "role": "accent"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "moderate",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 110.00,
+      "best_for_prestations": ["ceremony_arch", "bridal_bouquet_cascading", "centerpiece_low", "sweetheart_table_runner"],
+      "venue_types": ["garden", "outdoor", "vineyard", "estate"]
+    },
+    {
+      "id": 7,
+      "name": "Bold Tropical Summer",
+      "description": "Dramatic tropical blooms with architectural foliage",
+      "style_tags": ["tropical", "bold", "modern", "dramatic"],
+      "seasons": ["summer"],
+      "arrangement_style": "structured_architectural",
+      "color_palette": ["coral", "fuchsia", "orange", "deep_green"],
+      "flowers": [
+        {
+          "name": "protea",
+          "ratio": 35,
+          "colors": ["coral", "pink"],
+          "placement": "large focal statement blooms",
+          "role": "focal"
+        },
+        {
+          "name": "banksia",
+          "ratio": 25,
+          "colors": ["orange", "rust"],
+          "placement": "sculptural accents",
+          "role": "focal"
+        },
+        {
+          "name": "leucadendron",
+          "ratio": 20,
+          "colors": ["burgundy", "yellow"],
+          "placement": "adding color and texture",
+          "role": "filler"
+        },
+        {
+          "name": "monstera_leaves",
+          "ratio": 15,
+          "colors": ["deep_green"],
+          "placement": "bold foliage backdrop",
+          "role": "foliage"
+        },
+        {
+          "name": "cordyline",
+          "ratio": 5,
+          "colors": ["burgundy", "green"],
+          "placement": "linear accent foliage",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "moderate",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 125.00,
+      "best_for_prestations": ["reception_entrance_installation", "ceremony_arch_accents", "centerpiece_tall"],
+      "venue_types": ["modern_venue", "tropical_location", "beach", "contemporary_space"]
+    },
+    {
+      "id": 8,
+      "name": "Soft Blush Summer",
+      "description": "Lush summer arrangement in soft blush tones with varied textures",
+      "style_tags": ["romantic", "luxe", "soft", "abundant"],
+      "seasons": ["summer", "early_autumn"],
+      "arrangement_style": "lush_full",
+      "color_palette": ["blush", "peach", "ivory", "dusty_pink"],
+      "flowers": [
+        {
+          "name": "cafe_au_lait_dahlias",
+          "ratio": 35,
+          "colors": ["blush", "cream"],
+          "placement": "large focal blooms creating volume",
+          "role": "focal"
+        },
+        {
+          "name": "garden_roses",
+          "ratio": 30,
+          "colors": ["blush", "peach"],
+          "placement": "layered throughout supporting dahlias",
+          "role": "focal"
+        },
+        {
+          "name": "astilbe",
+          "ratio": 20,
+          "colors": ["dusty_pink", "peach"],
+          "placement": "feathery texture throughout",
+          "role": "filler"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 10,
+          "colors": ["sage_green"],
+          "placement": "minimal greenery accents",
+          "role": "foliage"
+        },
+        {
+          "name": "scabiosa",
+          "ratio": 5,
+          "colors": ["dusty_pink"],
+          "placement": "delicate accents",
+          "role": "accent"
+        }
+      ],
+      "foliage_density": "light_10",
+      "arrangement_density": "lush_full",
+      "price_range": "luxury",
+      "estimated_cost_per_arrangement": 155.00,
+      "best_for_prestations": ["bridal_bouquet_round", "ceremony_arch_full", "centerpiece_low"],
+      "venue_types": ["ballroom", "estate", "garden", "luxury_venue"]
+    },
+    {
+      "id": 9,
+      "name": "Luxe Modern Summer",
+      "description": "Sophisticated modern summer palette with premium blooms",
+      "style_tags": ["modern", "luxe", "sophisticated", "elegant"],
+      "seasons": ["summer"],
+      "arrangement_style": "structured_architectural",
+      "color_palette": ["white", "ivory", "deep_green"],
+      "flowers": [
+        {
+          "name": "phalaenopsis_orchids",
+          "ratio": 40,
+          "colors": ["white"],
+          "placement": "sculptural focal creating clean lines",
+          "role": "focal"
+        },
+        {
+          "name": "calla_lilies",
+          "ratio": 30,
+          "colors": ["white", "ivory"],
+          "placement": "architectural curves throughout",
+          "role": "focal"
+        },
+        {
+          "name": "anthuriums",
+          "ratio": 15,
+          "colors": ["white"],
+          "placement": "bold modern accent",
+          "role": "focal"
+        },
+        {
+          "name": "monstera_leaves",
+          "ratio": 10,
+          "colors": ["deep_green"],
+          "placement": "dramatic foliage backdrop",
+          "role": "foliage"
+        },
+        {
+          "name": "silver_dollar_eucalyptus",
+          "ratio": 5,
+          "colors": ["silver"],
+          "placement": "metallic accent",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_15",
+      "arrangement_density": "moderate",
+      "price_range": "luxury",
+      "estimated_cost_per_arrangement": 180.00,
+      "best_for_prestations": ["centerpiece_tall", "reception_entrance_installation", "bridal_bouquet_handheld"],
+      "venue_types": ["modern_venue", "contemporary_space", "ballroom", "art_gallery"]
+    },
+    {
+      "id": 10,
+      "name": "Airy Coastal Summer",
+      "description": "Light, breezy summer arrangement with coastal vibes",
+      "style_tags": ["coastal", "airy", "fresh", "light"],
+      "seasons": ["summer"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["white", "soft_blue", "silver_green"],
+      "flowers": [
+        {
+          "name": "baby_breath",
+          "ratio": 35,
+          "colors": ["white"],
+          "placement": "cloud-like base creating airiness",
+          "role": "filler"
+        },
+        {
+          "name": "stock",
+          "ratio": 25,
+          "colors": ["white", "soft_blue"],
+          "placement": "adding structure and height",
+          "role": "filler"
+        },
+        {
+          "name": "sea_holly",
+          "ratio": 20,
+          "colors": ["blue"],
+          "placement": "unique coastal texture",
+          "role": "accent"
+        },
+        {
+          "name": "white_roses",
+          "ratio": 10,
+          "colors": ["white"],
+          "placement": "subtle focal accents",
+          "role": "focal"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 10,
+          "colors": ["silver_green"],
+          "placement": "flowing throughout",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_10",
+      "arrangement_density": "airy",
+      "price_range": "mid",
+      "estimated_cost_per_arrangement": 75.00,
+      "best_for_prestations": ["ceremony_arch_accents", "aisle_markers", "cocktail_table_accents", "centerpiece_low"],
+      "venue_types": ["beach", "coastal", "outdoor", "nautical_venue"]
+    },
+    {
+      "id": 11,
+      "name": "Warm Rustic Autumn",
+      "description": "Rich autumn tones with harvest-inspired blooms and textures",
+      "style_tags": ["rustic", "harvest", "warm", "organic"],
+      "seasons": ["autumn"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["rust_orange", "golden_yellow", "burgundy", "bronze"],
+      "flowers": [
+        {
+          "name": "dahlias",
+          "ratio": 30,
+          "colors": ["rust_orange", "burgundy"],
+          "placement": "bold focal clusters",
+          "role": "focal"
+        },
+        {
+          "name": "marigolds",
+          "ratio": 20,
+          "colors": ["golden_yellow", "orange"],
+          "placement": "warm accents scattered throughout",
+          "role": "filler"
+        },
+        {
+          "name": "amaranth",
+          "ratio": 20,
+          "colors": ["burgundy", "rust"],
+          "placement": "trailing and draping naturally",
+          "role": "filler"
+        },
+        {
+          "name": "wheat_stalks",
+          "ratio": 15,
+          "colors": ["golden"],
+          "placement": "adding height and harvest texture",
+          "role": "structural"
+        },
+        {
+          "name": "oak_leaves",
+          "ratio": 15,
+          "colors": ["bronze", "rust"],
+          "placement": "seasonal foliage throughout",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "moderate_30",
+      "arrangement_density": "moderate",
+      "price_range": "mid",
+      "estimated_cost_per_arrangement": 80.00,
+      "best_for_prestations": ["centerpiece_low", "ceremony_arch_accents", "welcome_sign", "cocktail_table_accents"],
+      "venue_types": ["barn", "rustic_venue", "vineyard", "farm"]
+    },
+    {
+      "id": 12,
+      "name": "Elegant Burgundy Autumn",
+      "description": "Sophisticated autumn palette with deep burgundy and romantic blooms",
+      "style_tags": ["romantic", "elegant", "luxe", "moody"],
+      "seasons": ["autumn"],
+      "arrangement_style": "lush_full",
+      "color_palette": ["burgundy", "deep_red", "blush", "sage_green"],
+      "flowers": [
+        {
+          "name": "burgundy_dahlias",
+          "ratio": 35,
+          "colors": ["burgundy", "deep_red"],
+          "placement": "dramatic focal blooms",
+          "role": "focal"
+        },
+        {
+          "name": "garden_roses",
+          "ratio": 30,
+          "colors": ["burgundy", "blush"],
+          "placement": "layered throughout creating depth",
+          "role": "focal"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 20,
+          "colors": ["burgundy", "blush"],
+          "placement": "filling and adding texture",
+          "role": "filler"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 10,
+          "colors": ["sage_green"],
+          "placement": "soft greenery contrast",
+          "role": "foliage"
+        },
+        {
+          "name": "smoke_bush",
+          "ratio": 5,
+          "colors": ["burgundy"],
+          "placement": "wispy texture accents",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_15",
+      "arrangement_density": "lush_full",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 130.00,
+      "best_for_prestations": ["bridal_bouquet_round", "ceremony_arch_full", "centerpiece_low", "cake_flowers"],
+      "venue_types": ["ballroom", "estate", "winery", "elegant_venue"]
+    },
+    {
+      "id": 13,
+      "name": "Harvest Garden Autumn",
+      "description": "Cheerful autumn garden mix with sunflowers and zinnias",
+      "style_tags": ["rustic", "garden", "cheerful", "abundant"],
+      "seasons": ["late_summer", "autumn"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["golden_yellow", "orange", "rust", "warm_red"],
+      "flowers": [
+        {
+          "name": "sunflowers",
+          "ratio": 30,
+          "colors": ["golden_yellow"],
+          "placement": "bold cheerful focal blooms",
+          "role": "focal"
+        },
+        {
+          "name": "zinnias",
+          "ratio": 30,
+          "colors": ["orange", "rust", "red"],
+          "placement": "colorful filler throughout",
+          "role": "filler"
+        },
+        {
+          "name": "celosia",
+          "ratio": 20,
+          "colors": ["orange", "burgundy"],
+          "placement": "textural accent blooms",
+          "role": "filler"
+        },
+        {
+          "name": "wheat_stalks",
+          "ratio": 15,
+          "colors": ["golden"],
+          "placement": "harvest structural elements",
+          "role": "structural"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 5,
+          "colors": ["green"],
+          "placement": "minimal greenery",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "abundant",
+      "price_range": "mid",
+      "estimated_cost_per_arrangement": 70.00,
+      "best_for_prestations": ["centerpiece_low", "welcome_sign", "ceremony_arch_accents", "cocktail_table_accents"],
+      "venue_types": ["barn", "farm", "outdoor", "rustic_venue"]
+    },
+    {
+      "id": 14,
+      "name": "Moody Romance Autumn",
+      "description": "Deep, moody autumn palette with unique blooms and dramatic foliage",
+      "style_tags": ["moody", "romantic", "dramatic", "unique"],
+      "seasons": ["autumn"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["deep_burgundy", "plum", "dusty_mauve", "charcoal_green"],
+      "flowers": [
+        {
+          "name": "garden_roses",
+          "ratio": 35,
+          "colors": ["burgundy", "plum"],
+          "placement": "rich focal blooms",
+          "role": "focal"
+        },
+        {
+          "name": "hellebores",
+          "ratio": 25,
+          "colors": ["dusty_mauve", "burgundy"],
+          "placement": "nodding moody accents",
+          "role": "accent"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 20,
+          "colors": ["burgundy", "plum"],
+          "placement": "layered texture",
+          "role": "filler"
+        },
+        {
+          "name": "smoke_bush",
+          "ratio": 15,
+          "colors": ["burgundy", "purple"],
+          "placement": "dramatic wispy foliage",
+          "role": "foliage"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 5,
+          "colors": ["charcoal_green"],
+          "placement": "dark greenery accents",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "moderate",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 120.00,
+      "best_for_prestations": ["bridal_bouquet_cascading", "centerpiece_low", "cake_flowers", "sweetheart_table_runner"],
+      "venue_types": ["ballroom", "estate", "modern_venue", "industrial_space"]
+    },
+    {
+      "id": 15,
+      "name": "Classic Autumn Celebration",
+      "description": "Traditional autumn arrangement with chrysanthemums and berries",
+      "style_tags": ["classic", "traditional", "seasonal", "festive"],
+      "seasons": ["autumn"],
+      "arrangement_style": "structured_architectural",
+      "color_palette": ["burgundy", "golden_yellow", "rust_orange", "deep_green"],
+      "flowers": [
+        {
+          "name": "chrysanthemums",
+          "ratio": 40,
+          "colors": ["burgundy", "golden_yellow", "rust"],
+          "placement": "traditional full blooms evenly distributed",
+          "role": "focal"
+        },
+        {
+          "name": "asters",
+          "ratio": 25,
+          "colors": ["purple", "burgundy"],
+          "placement": "filler creating fullness",
+          "role": "filler"
+        },
+        {
+          "name": "hypericum_berries",
+          "ratio": 20,
+          "colors": ["burgundy", "rust"],
+          "placement": "berry accents throughout",
+          "role": "accent"
+        },
+        {
+          "name": "solidago",
+          "ratio": 10,
+          "colors": ["golden_yellow"],
+          "placement": "feathery texture accents",
+          "role": "filler"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 5,
+          "colors": ["deep_green"],
+          "placement": "minimal greenery base",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_5",
+      "arrangement_density": "full",
+      "price_range": "mid",
+      "estimated_cost_per_arrangement": 75.00,
+      "best_for_prestations": ["centerpiece_low", "centerpiece_tall", "ceremony_arch_accents"],
+      "venue_types": ["ballroom", "traditional_venue", "banquet_hall"]
+    },
+    {
+      "id": 16,
+      "name": "Winter White Elegance",
+      "description": "Pure white winter arrangement with dramatic amaryllis and evergreens",
+      "style_tags": ["elegant", "classic", "winter", "dramatic"],
+      "seasons": ["winter"],
+      "arrangement_style": "structured_architectural",
+      "color_palette": ["white", "ivory", "silver", "deep_green"],
+      "flowers": [
+        {
+          "name": "amaryllis",
+          "ratio": 35,
+          "colors": ["white"],
+          "placement": "dramatic large focal blooms",
+          "role": "focal"
+        },
+        {
+          "name": "white_roses",
+          "ratio": 30,
+          "colors": ["white", "ivory"],
+          "placement": "supporting focal throughout",
+          "role": "focal"
+        },
+        {
+          "name": "white_stock",
+          "ratio": 15,
+          "colors": ["white"],
+          "placement": "adding height and fragrance",
+          "role": "filler"
+        },
+        {
+          "name": "evergreens_mixed",
+          "ratio": 15,
+          "colors": ["deep_green"],
+          "placement": "seasonal foliage base",
+          "role": "foliage"
+        },
+        {
+          "name": "silver_dollar_eucalyptus",
+          "ratio": 5,
+          "colors": ["silver"],
+          "placement": "metallic winter accents",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "moderate",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 125.00,
+      "best_for_prestations": ["ceremony_arch_full", "centerpiece_tall", "reception_entrance_installation"],
+      "venue_types": ["ballroom", "chapel", "elegant_venue", "estate"]
+    },
+    {
+      "id": 17,
+      "name": "Festive Burgundy Winter",
+      "description": "Rich winter palette with burgundy roses and festive berries",
+      "style_tags": ["festive", "romantic", "luxe", "seasonal"],
+      "seasons": ["winter"],
+      "arrangement_style": "lush_full",
+      "color_palette": ["burgundy", "deep_red", "ivory", "forest_green"],
+      "flowers": [
+        {
+          "name": "burgundy_roses",
+          "ratio": 40,
+          "colors": ["burgundy", "deep_red"],
+          "placement": "lush focal creating richness",
+          "role": "focal"
+        },
+        {
+          "name": "white_roses",
+          "ratio": 25,
+          "colors": ["ivory", "white"],
+          "placement": "contrast blooms throughout",
+          "role": "focal"
+        },
+        {
+          "name": "hypericum_berries",
+          "ratio": 15,
+          "colors": ["burgundy", "red"],
+          "placement": "festive berry accents",
+          "role": "accent"
+        },
+        {
+          "name": "pine",
+          "ratio": 15,
+          "colors": ["forest_green"],
+          "placement": "seasonal evergreen base",
+          "role": "foliage"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 5,
+          "colors": ["silver_green"],
+          "placement": "soft foliage accents",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "lush_full",
+      "price_range": "premium",
+      "estimated_cost_per_arrangement": 115.00,
+      "best_for_prestations": ["bridal_bouquet_round", "centerpiece_low", "sweetheart_table_runner", "cake_flowers"],
+      "venue_types": ["ballroom", "estate", "traditional_venue", "winter_lodge"]
+    },
+    {
+      "id": 18,
+      "name": "Romantic Winter Garden",
+      "description": "Soft winter romance with hellebores and delicate blooms",
+      "style_tags": ["romantic", "soft", "unique", "elegant"],
+      "seasons": ["winter", "early_spring"],
+      "arrangement_style": "loose_organic",
+      "color_palette": ["dusty_mauve", "blush", "ivory", "sage_green"],
+      "flowers": [
+        {
+          "name": "hellebores",
+          "ratio": 30,
+          "colors": ["dusty_mauve", "blush"],
+          "placement": "nodding romantic focal blooms",
+          "role": "focal"
+        },
+        {
+          "name": "anemones",
+          "ratio": 30,
+          "colors": ["white", "blush"],
+          "placement": "delicate supporting blooms",
+          "role": "focal"
+        },
+        {
+          "name": "ranunculus",
+          "ratio": 20,
+          "colors": ["blush", "ivory"],
+          "placement": "textural filler",
+          "role": "filler"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 15,
+          "colors": ["sage_green"],
+          "placement": "soft greenery throughout",
+          "role": "foliage"
+        },
+        {
+          "name": "ivy",
+          "ratio": 5,
+          "colors": ["green"],
+          "placement": "trailing accents",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "light_20",
+      "arrangement_density": "airy",
+      "price_range": "mid_premium",
+      "estimated_cost_per_arrangement": 105.00,
+      "best_for_prestations": ["bridal_bouquet_cascading", "centerpiece_low", "aisle_markers", "cake_flowers"],
+      "venue_types": ["garden", "chapel", "estate", "elegant_venue"]
+    },
+    {
+      "id": 19,
+      "name": "Luxe Winter Orchid",
+      "description": "Sophisticated winter arrangement with premium orchids and calla lilies",
+      "style_tags": ["luxe", "modern", "sophisticated", "elegant"],
+      "seasons": ["winter"],
+      "arrangement_style": "structured_architectural",
+      "color_palette": ["white", "ivory", "silver", "deep_green"],
+      "flowers": [
+        {
+          "name": "phalaenopsis_orchids",
+          "ratio": 40,
+          "colors": ["white"],
+          "placement": "sculptural focal creating elegance",
+          "role": "focal"
+        },
+        {
+          "name": "calla_lilies",
+          "ratio": 35,
+          "colors": ["white", "ivory"],
+          "placement": "architectural curves throughout",
+          "role": "focal"
+        },
+        {
+          "name": "silver_dollar_eucalyptus",
+          "ratio": 15,
+          "colors": ["silver"],
+          "placement": "metallic winter foliage",
+          "role": "foliage"
+        },
+        {
+          "name": "white_pine",
+          "ratio": 10,
+          "colors": ["deep_green"],
+          "placement": "seasonal textural base",
+          "role": "foliage"
+        }
+      ],
+      "foliage_density": "moderate_25",
+      "arrangement_density": "moderate",
+      "price_range": "luxury",
+      "estimated_cost_per_arrangement": 190.00,
+      "best_for_prestations": ["bridal_bouquet_handheld", "centerpiece_tall", "reception_entrance_installation"],
+      "venue_types": ["modern_venue", "ballroom", "luxury_venue", "contemporary_space"]
+    },
+    {
+      "id": 20,
+      "name": "Nordic Minimalist Winter",
+      "description": "Clean minimalist winter aesthetic with white blooms and branches",
+      "style_tags": ["minimalist", "modern", "clean", "nordic"],
+      "seasons": ["winter"],
+      "arrangement_style": "minimalist_sculptural",
+      "color_palette": ["white", "cream", "charcoal", "natural_wood"],
+      "flowers": [
+        {
+          "name": "white_roses",
+          "ratio": 50,
+          "colors": ["white", "cream"],
+          "placement": "clean simple clusters",
+          "role": "focal"
+        },
+        {
+          "name": "eucalyptus",
+          "ratio": 30,
+          "colors": ["silver_green"],
+          "placement": "minimal greenery accents",
+          "role": "foliage"
+        },
+        {
+          "name": "natural_branches",
+          "ratio": 20,
+          "colors": ["natural_wood"],
+          "placement": "architectural structural elements creating negative space",
+          "role": "structural"
+        }
+      ],
+      "foliage_density": "minimal_30",
+      "arrangement_density": "minimal",
+      "price_range": "mid_premium",
+      "estimated_cost_per_arrangement": 95.00,
+      "best_for_prestations": ["centerpiece_low", "cocktail_table_accents", "ceremony_arch_accents"],
+      "venue_types": ["modern_venue", "scandinavian_aesthetic", "minimalist_space", "art_gallery"]
+    }
+  ]
+}

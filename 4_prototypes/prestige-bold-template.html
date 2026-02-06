@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Bold Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Grotesk:wght@300;400;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Prestation - Image Dominates */
+        .prestation-hero-bold {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .prestation-content-bold {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 0;
+        }
+
+        .prestation-title-vertical {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-family: 'Oswald', sans-serif;
+            font-size: 96px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            padding: 60px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000000;
+            color: #FFFFFF;
+        }
+
+        .prestation-image-massive {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .prestation-details-overlay {
+            position: absolute;
+            bottom: 60px;
+            left: 60px;
+            color: white;
+            max-width: 500px;
+        }
+
+        .prestation-details-overlay p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .prestation-details-overlay .details-line {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .prestation-price-massive {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Full Bleed Image */
+        .prestation-fullbleed {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .fullbleed-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .fullbleed-title {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            letter-spacing: -3px;
+            line-height: 0.9;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            max-width: 600px;
+        }
+
+        .fullbleed-details {
+            position: absolute;
+            bottom: 80px;
+            right: 80px;
+            text-align: right;
+            color: white;
+        }
+
+        .fullbleed-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 400px;
+            margin-left: auto;
+            font-weight: 300;
+        }
+
+        .fullbleed-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        /* Split Dramatic */
+        .prestation-split-dramatic {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            height: 100vh;
+            margin-bottom: 0;
+        }
+
+        .split-text-dramatic {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 100px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-text-dramatic h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .split-text-dramatic p {
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.85;
+        }
+
+        .split-text-dramatic .price-bold {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: auto;
+        }
+
+        .split-image-dramatic {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* Moodboard - Full Screen Immersive */
+        .moodboard-bold {
+            margin: 0;
+        }
+
+        .moodboard-hero-bold {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .moodboard-title-overlay {
+            font-family: 'Oswald', sans-serif;
+            font-size: 180px;
+            font-weight: 700;
+            letter-spacing: -5px;
+            color: rgba(255, 255, 255, 0.95);
+            text-transform: uppercase;
+            line-height: 0.85;
+        }
+
+        .moodboard-grid-bold {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-bottom: 0;
+        }
+
+        .grid-image-bold {
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+            border: 1px solid #000;
+        }
+
+        /* Quote - Minimal Bold */
+        .quote-bold {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 150px 100px;
+            margin: 0;
+        }
+
+        .quote-title-bold {
+            font-family: 'Oswald', sans-serif;
+            font-size: 96px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            text-align: center;
+            margin-bottom: 120px;
+            text-transform: uppercase;
+        }
+
+        .quote-category-bold {
+            margin-bottom: 80px;
+        }
+
+        .quote-line-bold {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quote-line-bold .category {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .quote-line-bold .amount {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .quote-divider-bold {
+            width: 100%;
+            height: 2px;
+            background: #FFFFFF;
+            margin: 100px 0 60px 0;
+        }
+
+        .quote-total-bold {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Oswald', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding-top: 40px;
+            border-top: 3px solid #FFFFFF;
+        }
+
+        .quote-note-bold {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.9;
+            margin-top: 100px;
+            opacity: 0.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .prestation-content-bold {
+                grid-template-columns: 120px 1fr;
+            }
+
+            .prestation-title-vertical {
+                font-size: 60px;
+            }
+
+            .fullbleed-title {
+                font-size: 80px;
+                top: 60px;
+                left: 60px;
+            }
+
+            .split-text-dramatic h2 {
+                font-size: 48px;
+            }
+
+            .moodboard-title-overlay {
+                font-size: 120px;
+            }
+
+            .quote-title-bold {
+                font-size: 64px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .prestation-content-bold {
+                grid-template-columns: 1fr;
+            }
+
+            .prestation-title-vertical {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 48px;
+                padding: 40px;
+            }
+
+            .prestation-split-dramatic {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .split-text-dramatic {
+                padding: 60px 40px;
+            }
+
+            .moodboard-grid-bold {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quote-bold {
+                padding: 80px 40px;
+            }
+
+            .quote-title-bold {
+                font-size: 48px;
+            }
+
+            .quote-line-bold .amount {
+                font-size: 32px;
+            }
+
+            .quote-total-bold {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Prestation 1: Hero with Vertical Title -->
+        <div class="prestation-hero-bold">
+            <div class="prestation-content-bold">
+                <div class="prestation-title-vertical">
+                    BRIDAL BOUQUET
+                </div>
+                <div class="prestation-image-massive">
+                    [Bridal Bouquet Landscape 16:9]
+                    <div class="prestation-details-overlay">
+                        <p>
+                            A bold statement piece—sculptural blooms arranged with unapologetic drama. Deep jewel tones, unexpected textures, architectural forms.
+                        </p>
+                        <div class="details-line">
+                            DRAMATIC • SCULPTURAL • BOLD
+                        </div>
+                        <div class="prestation-price-massive">$350</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prestation 2: Full Bleed -->
+        <div class="prestation-fullbleed">
+            <div class="fullbleed-image">
+                [Ceremony Installation Landscape Ultra-Wide]
+            </div>
+            <div class="fullbleed-title">
+                CEREMONY<br>ARCH
+            </div>
+            <div class="fullbleed-details">
+                <p class="fullbleed-description">
+                    Monumental. Unapologetic. A ceiling installation that commands attention—cascading florals in rich, saturated tones creating theatre for your vows.
+                </p>
+                <div class="fullbleed-price">$3,500</div>
+            </div>
+        </div>
+
+        <!-- Prestation 3: Split Dramatic -->
+        <div class="prestation-split-dramatic">
+            <div class="split-text-dramatic">
+                <h2>BRIDAL<br>TABLE</h2>
+                <p>
+                    A cascading masterpiece anchoring your reception. Bold, sculptural, impossible to ignore. This is luxury without apology.
+                </p>
+                <div class="price-bold">$500</div>
+            </div>
+            <div class="split-image-dramatic">
+                [Bridal Table Dramatic Shot]
+            </div>
+        </div>
+
+        <!-- Moodboard -->
+        <div class="moodboard-bold">
+            <!-- Ceremony Hero -->
+            <div class="moodboard-hero-bold">
+                <div class="moodboard-title-overlay">CEREMONY</div>
+            </div>
+
+            <!-- Ceremony Grid -->
+            <div class="moodboard-grid-bold">
+                <div class="grid-image-bold">[1]</div>
+                <div class="grid-image-bold">[2]</div>
+                <div class="grid-image-bold">[3]</div>
+                <div class="grid-image-bold">[4]</div>
+                <div class="grid-image-bold">[5]</div>
+                <div class="grid-image-bold">[6]</div>
+            </div>
+
+            <!-- Reception Hero -->
+            <div class="moodboard-hero-bold">
+                <div class="moodboard-title-overlay">RECEPTION</div>
+            </div>
+
+            <!-- Reception Grid -->
+            <div class="moodboard-grid-bold">
+                <div class="grid-image-bold">[7]</div>
+                <div class="grid-image-bold">[8]</div>
+                <div class="grid-image-bold">[9]</div>
+                <div class="grid-image-bold">[10]</div>
+            </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-bold">
+            <h1 class="quote-title-bold">YOUR<br>INVESTMENT</h1>
+
+            <div class="quote-category-bold">
+                <div class="quote-line-bold">
+                    <span class="category">Ceremony Florals</span>
+                    <span class="amount">$5,050</span>
+                </div>
+            </div>
+
+            <div class="quote-category-bold">
+                <div class="quote-line-bold">
+                    <span class="category">Reception Florals</span>
+                    <span class="amount">$3,320</span>
+                </div>
+            </div>
+
+            <div class="quote-divider-bold"></div>
+
+            <div class="quote-line-bold" style="border: none;">
+                <span class="category" style="font-size: 20px;">Subtotal</span>
+                <span class="amount" style="font-size: 36px;">$8,370</span>
+            </div>
+            <div class="quote-line-bold" style="border: none;">
+                <span class="category" style="font-size: 20px;">GST (10%)</span>
+                <span class="amount" style="font-size: 36px;">$837</span>
+            </div>
+
+            <div class="quote-total-bold">
+                <span>TOTAL</span>
+                <span>$9,207</span>
+            </div>
+
+            <p class="quote-note-bold">
+                This investment reflects a bold, unapologetic floral experience.<br>
+                For those who demand drama. For those who refuse subtlety.<br>
+                Final details refined in consultation.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

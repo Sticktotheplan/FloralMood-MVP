@@ -1,0 +1,517 @@
+{
+  "photography": {
+    "realistic_prefixes": [
+      "Real photograph from",
+      "Documentary photo of",
+      "Candid shot during",
+      "Professional photo taken at",
+      "Natural photograph of",
+      "Authentic image from"
+    ],
+    "camera_specs": [
+      "Nikon D850 natural bokeh",
+      "Canon 5D Mark IV 50mm lens f/1.8",
+      "Fujifilm X-T4 35mm f/2",
+      "Sony A7III 85mm lens",
+      "Canon EOS R5 RF 50mm",
+      "Nikon Z6 II with natural depth of field",
+      "Leica Q2 28mm f/1.7"
+    ],
+    "film_aesthetics": [
+      "Kodak Portra 400 film aesthetic",
+      "Fuji Pro 400H color palette",
+      "Kodak Ektar warm tones",
+      "Ilford HP5 slight grain texture",
+      "Cinestill 800T natural grain",
+      "Portra 160 soft color rendition"
+    ],
+    "lighting_natural": [
+      "soft morning sunlight through sheer curtains",
+      "dappled afternoon light filtering through trees",
+      "golden hour warm glow",
+      "overcast diffused natural light",
+      "soft window light from north-facing window",
+      "late afternoon sun creating warm highlights",
+      "natural daylight from large windows",
+      "gentle backlight from setting sun",
+      "cloudy day even natural lighting",
+      "indirect sunlight bouncing off surfaces"
+    ],
+    "imperfections": [
+      "slight grain",
+      "authentic imperfections",
+      "natural variations in flower placement",
+      "organic spacing with minor gaps",
+      "subtle color variations in petals",
+      "real-world depth and dimension"
+    ],
+    "photography_styles": [
+      "candid documentary style",
+      "professional wedding photography style",
+      "editorial bridal magazine aesthetic",
+      "fine art photography composition",
+      "natural lifestyle photography",
+      "authentic event photography style"
+    ]
+  },
+  "composition": {
+    "specificity_ratios": {
+      "rules": [
+        "Always use percentages for flower distribution (e.g., 35% roses, 25% filler)",
+        "Specify exact placements (left-heavy, cascading right, centered cluster)",
+        "Mention gaps and spacing (intentional gaps showing structure, 30% foliage density)",
+        "Use cluster descriptions (clusters of 3-4 blooms, scattered throughout)",
+        "Specify positioning (lower portion, upper right, trailing edge)"
+      ],
+      "ratio_examples": [
+        "35% focal flowers, 25% secondary flowers, 30% foliage, 10% accent blooms",
+        "40% main blooms, 30% filler flowers, 20% greenery, 10% delicate accents",
+        "50% roses tight center, 30% eucalyptus trailing, 20% accent flowers scattered"
+      ]
+    },
+    "arrangement_styles": {
+      "loose_organic": {
+        "description": "asymmetric, airy, 30-40% foliage, intentional gaps showing structure",
+        "keywords": ["loose", "organic", "asymmetric", "airy arrangement", "intentional gaps", "natural spacing"],
+        "density": "low to medium (30-40% foliage density)"
+      },
+      "lush_full": {
+        "description": "tight clusters, 60-70% flower density, minimal gaps, abundant",
+        "keywords": ["lush", "full", "abundant", "tight clusters", "overflowing", "minimal gaps"],
+        "density": "high (60-70% flower density)"
+      },
+      "minimalist_sculptural": {
+        "description": "architectural lines, 20% flowers 80% negative space, clean modern",
+        "keywords": ["minimalist", "sculptural", "architectural", "clean lines", "negative space", "modern"],
+        "density": "very low (20% flower coverage)"
+      },
+      "romantic_abundant": {
+        "description": "overflowing, cascading, layered textures, soft and dreamy",
+        "keywords": ["romantic", "abundant", "overflowing", "cascading", "layered", "dreamy"],
+        "density": "medium to high (50-65% density)"
+      },
+      "structured_architectural": {
+        "description": "geometric patterns, symmetrical, precise placement, modern lines",
+        "keywords": ["structured", "architectural", "symmetrical", "geometric", "precise", "modern"],
+        "density": "medium (40-50% density with clear structure)"
+      },
+      "wildflower_meadow": {
+        "description": "informal mix, varied heights, loose natural groupings, field-picked aesthetic",
+        "keywords": ["wildflower", "meadow", "informal", "varied heights", "natural", "field-picked"],
+        "density": "medium (40-50% mixed density)"
+      }
+    },
+    "placement_descriptors": [
+      "positioned asymmetrically left-heavy",
+      "cascading right side",
+      "centered cluster with radiating stems",
+      "scattered throughout composition",
+      "concentrated lower portion",
+      "trailing from upper left",
+      "grouped in clusters of 3-5 blooms",
+      "layered front to back",
+      "creating visual triangle composition",
+      "flowing diagonally from top left to bottom right"
+    ],
+    "gap_spacing": [
+      "intentional gaps showing natural structure",
+      "airy arrangement with 30-40% gaps",
+      "loose spacing between clusters",
+      "minimal gaps with tight composition",
+      "negative space highlighting focal blooms",
+      "organic spacing with natural variations"
+    ]
+  },
+  "negative_prompts": {
+    "avoid_ai_look": [
+      "no CGI",
+      "no 3D render",
+      "no AI generated look",
+      "no perfect symmetry",
+      "no oversaturated colors",
+      "no artificial digital effects",
+      "no computer generated imagery",
+      "no synthetic appearance"
+    ],
+    "avoid_studio": [
+      "no studio lighting",
+      "no white backdrop",
+      "no seamless background",
+      "no professional photography setup visible",
+      "no ring lights",
+      "no studio flash",
+      "no infinite white background"
+    ],
+    "avoid_unrealistic_flowers": [
+      "no neon purple flowers",
+      "no glowing flowers",
+      "no fantasy colors",
+      "no blue roses",
+      "no rainbow petals",
+      "no bioluminescent flowers",
+      "no unrealistic color saturation"
+    ],
+    "avoid_quality_issues": [
+      "no blurry details",
+      "no pixelation",
+      "no artifacts",
+      "no distorted petals",
+      "no malformed flowers",
+      "no extra petals",
+      "no missing stems"
+    ],
+    "avoid_style_mismatch": [
+      "no cartoon style",
+      "no illustration",
+      "no painting",
+      "no sketch",
+      "no watercolor effect",
+      "no artistic rendering"
+    ],
+    "avoid_elements": [
+      "no text",
+      "no watermark",
+      "no logo",
+      "no visible hands holding (unless specified)",
+      "no people in background (unless specified)",
+      "no price tags",
+      "no plastic wrapping"
+    ]
+  },
+  "seasonal_rules": {
+    "spring": {
+      "include": [
+        "tulips",
+        "peonies",
+        "ranunculus",
+        "sweet_peas",
+        "hellebores",
+        "hyacinths",
+        "daffodils",
+        "narcissus",
+        "anemones",
+        "lilac",
+        "cherry_blossoms",
+        "magnolia",
+        "freesia",
+        "lily_of_the_valley",
+        "primrose",
+        "forget_me_nots"
+      ],
+      "exclude": [
+        "sunflowers",
+        "dahlias",
+        "amaranthus",
+        "chrysanthemums",
+        "marigolds",
+        "zinnias"
+      ],
+      "color_palette": [
+        "soft_pink",
+        "blush",
+        "lavender",
+        "pale_yellow",
+        "white",
+        "cream",
+        "mint_green",
+        "pastel_purple",
+        "peach"
+      ],
+      "foliage": [
+        "eucalyptus",
+        "olive_branches",
+        "ferns",
+        "jasmine_vine",
+        "ivy",
+        "lemon_leaf"
+      ]
+    },
+    "summer": {
+      "include": [
+        "garden_roses",
+        "dahlias",
+        "lisianthus",
+        "hydrangeas",
+        "stock",
+        "snapdragons",
+        "delphiniums",
+        "baby's_breath",
+        "astilbe",
+        "veronica",
+        "scabiosa",
+        "nigella",
+        "Queen_Anne's_lace",
+        "carnations",
+        "spray_roses",
+        "lavender"
+      ],
+      "exclude": [
+        "tulips",
+        "peonies",
+        "amaryllis",
+        "poinsettia",
+        "paperwhites"
+      ],
+      "color_palette": [
+        "coral",
+        "peach",
+        "bright_pink",
+        "yellow",
+        "white",
+        "lavender",
+        "soft_blue",
+        "warm_tones",
+        "vibrant_colors"
+      ],
+      "foliage": [
+        "eucalyptus",
+        "dusty_miller",
+        "salal",
+        "ruscus",
+        "bay_laurel",
+        "seeded_eucalyptus"
+      ]
+    },
+    "autumn": {
+      "include": [
+        "dahlias",
+        "chrysanthemums",
+        "marigolds",
+        "asters",
+        "sunflowers",
+        "zinnias",
+        "celosia",
+        "amaranthus",
+        "roses",
+        "ranunculus",
+        "carnations",
+        "hypericum_berries",
+        "safflower",
+        "solidago",
+        "protea"
+      ],
+      "exclude": [
+        "tulips",
+        "peonies",
+        "sweet_peas",
+        "lily_of_the_valley"
+      ],
+      "color_palette": [
+        "rust_orange",
+        "burgundy",
+        "deep_red",
+        "golden_yellow",
+        "bronze",
+        "burnt_sienna",
+        "plum",
+        "terracotta",
+        "warm_browns"
+      ],
+      "foliage": [
+        "oak_leaves",
+        "maple_leaves",
+        "wheat",
+        "dried_grasses",
+        "smoke_bush",
+        "eucalyptus",
+        "magnolia_leaves"
+      ]
+    },
+    "winter": {
+      "include": [
+        "amaryllis",
+        "hellebores",
+        "anemones",
+        "roses",
+        "ranunculus",
+        "orchids",
+        "calla_lilies",
+        "tulips",
+        "paperwhites",
+        "hyacinths",
+        "lisianthus",
+        "carnations",
+        "white_stock",
+        "freesia"
+      ],
+      "exclude": [
+        "peonies",
+        "dahlias",
+        "sunflowers",
+        "zinnias",
+        "marigolds"
+      ],
+      "color_palette": [
+        "white",
+        "ivory",
+        "deep_red",
+        "burgundy",
+        "silver",
+        "pewter",
+        "navy_blue",
+        "forest_green",
+        "champagne"
+      ],
+      "foliage": [
+        "evergreens",
+        "pine",
+        "cedar",
+        "holly",
+        "eucalyptus",
+        "silver_dollar_eucalyptus",
+        "white_pine",
+        "juniper",
+        "ivy"
+      ]
+    }
+  },
+  "style_mappings": {
+    "romantic": {
+      "flowers": ["roses", "peonies", "ranunculus", "sweet_peas", "lisianthus"],
+      "colors": ["blush", "ivory", "soft_pink", "peach", "lavender"],
+      "arrangement": "loose_organic or romantic_abundant",
+      "keywords": ["soft", "dreamy", "flowing", "delicate", "abundant"]
+    },
+    "modern": {
+      "flowers": ["calla_lilies", "orchids", "anthuriums", "protea", "succulents"],
+      "colors": ["white", "black", "bold_single_color", "monochromatic"],
+      "arrangement": "minimalist_sculptural or structured_architectural",
+      "keywords": ["clean", "geometric", "architectural", "bold", "minimalist"]
+    },
+    "rustic": {
+      "flowers": ["sunflowers", "wildflowers", "dahlias", "zinnias", "wheat"],
+      "colors": ["warm_tones", "earth_tones", "rust", "gold", "burgundy"],
+      "arrangement": "loose_organic or wildflower_meadow",
+      "keywords": ["natural", "organic", "earthy", "textured", "informal"],
+      "vessels": ["terracotta", "wooden_boxes", "mason_jars", "vintage_metal"]
+    },
+    "luxe": {
+      "flowers": ["orchids", "calla_lilies", "premium_roses", "anthuriums", "king_protea"],
+      "colors": ["white", "deep_jewel_tones", "metallic_accents"],
+      "arrangement": "lush_full or structured_architectural",
+      "keywords": ["opulent", "sophisticated", "elegant", "premium", "refined"],
+      "foliage": ["monstera", "palm_leaves", "metallic_painted_leaves"]
+    },
+    "garden": {
+      "flowers": ["garden_roses", "peonies", "sweet_peas", "delphiniums", "foxglove"],
+      "colors": ["pastels", "mixed_colors", "soft_palette"],
+      "arrangement": "loose_organic or romantic_abundant",
+      "keywords": ["natural", "abundant", "layered", "organic", "cottage-style"],
+      "foliage": ["ferns", "ivy", "jasmine_vine", "olive_branches"]
+    },
+    "tropical": {
+      "flowers": ["orchids", "anthuriums", "bird_of_paradise", "ginger", "heliconia"],
+      "colors": ["vibrant", "coral", "fuchsia", "orange", "bold_greens"],
+      "arrangement": "lush_full or structured_architectural",
+      "keywords": ["bold", "exotic", "vibrant", "lush", "dramatic"],
+      "foliage": ["monstera", "palm_fronds", "ti_leaves", "cordyline"]
+    },
+    "boho": {
+      "flowers": ["pampas_grass", "dried_flowers", "protea", "thistles", "wildflowers"],
+      "colors": ["earth_tones", "terracotta", "sage", "cream", "dusty_colors"],
+      "arrangement": "loose_organic or wildflower_meadow",
+      "keywords": ["free-spirited", "textured", "natural", "eclectic", "relaxed"],
+      "foliage": ["pampas", "dried_grasses", "lunaria", "eucalyptus"]
+    },
+    "classic": {
+      "flowers": ["roses", "hydrangeas", "calla_lilies", "carnations", "lilies"],
+      "colors": ["white", "ivory", "blush", "traditional_palette"],
+      "arrangement": "structured_architectural or lush_full",
+      "keywords": ["timeless", "elegant", "traditional", "symmetrical", "refined"]
+    }
+  },
+  "prestation_specific_rules": {
+    "ceremony_arch": {
+      "structure_mentions": ["wooden arch", "metal arbor", "circular arch", "rectangular arbor", "natural branch structure"],
+      "installation_notes": ["garland draped", "clustered at corners", "asymmetric installation", "full coverage", "minimal accent clusters"],
+      "viewing_angle": ["shot from ceremony aisle perspective", "angled view showing depth", "centered frontal view"]
+    },
+    "bridal_bouquet": {
+      "hand_presence": ["held by bride at waist level", "bride's hands visible holding bouquet", "elegant manicure visible"],
+      "stem_details": ["long stems wrapped in silk ribbon", "natural stems visible", "ribbon tied in bow", "stems bound with lace"],
+      "context": ["bride's lace dress softly blurred in background", "natural outdoor setting behind", "soft indoor light near window"]
+    },
+    "centerpiece": {
+      "vessel_types": ["terracotta pot", "glass cylinder vase", "vintage brass compote", "wooden box", "ceramic bowl", "mercury glass"],
+      "table_context": ["on wooden farm table", "white linen tablecloth", "rustic wood surface", "marble tabletop"],
+      "height_specs": ["low arrangement allowing conversation across table", "tall dramatic height 24+ inches", "medium height 12-18 inches"]
+    },
+    "installation_large": {
+      "scale_indicators": ["floor-to-ceiling", "8-foot tall", "spanning 6-foot width", "monumental scale"],
+      "installation_location": ["ceremony backdrop", "reception entrance", "statement wall", "suspended overhead"],
+      "structural_elements": ["steel frame visible", "natural branch armature", "geometric metal structure", "organic vine base"]
+    },
+    "boutonniere": {
+      "scale": ["single bloom focal", "delicate small-scale", "2-3 inch total size"],
+      "attachment": ["pinned to lapel", "wrapped stem with pin", "boutonniere pin visible"],
+      "context": ["on dark suit lapel", "navy jacket", "charcoal gray suit", "tuxedo"]
+    },
+    "corsage": {
+      "wearing_style": ["wrist corsage with ribbon tie", "pin-on corsage", "magnetic back corsage"],
+      "scale": ["compact 3-4 inch arrangement", "delicate proportions"],
+      "context": ["on wrist with dress sleeve visible", "pinned to dress shoulder"]
+    }
+  },
+  "vessel_descriptions": {
+    "terracotta": "matte terracotta pot with visible patina and weathered texture",
+    "ceramic_white": "white ceramic vase with smooth matte finish",
+    "glass_cylinder": "clear glass cylinder vase showing stems",
+    "vintage_brass": "vintage brass compote with aged patina",
+    "wooden_box": "reclaimed wood box with natural grain visible",
+    "mercury_glass": "antique mercury glass vase with silvered finish",
+    "concrete": "modern concrete vessel with industrial texture",
+    "woven_basket": "natural woven basket with organic texture"
+  },
+  "quality_thresholds": {
+    "specificity_score_minimum": 80,
+    "concrete_nouns_ratio": 0.7,
+    "generic_adjectives_maximum": 0.2,
+    "forbidden_keywords": ["beautiful", "nice", "pretty", "lovely", "stunning", "gorgeous", "amazing", "perfect", "flawless"],
+    "required_elements": [
+      "photography_prefix",
+      "flower_percentages",
+      "placement_descriptors",
+      "camera_or_film_aesthetic",
+      "lighting_description",
+      "negative_prompt"
+    ]
+  },
+  "substitution_rules": {
+    "peonies_unavailable": {
+      "season": ["summer", "autumn", "winter"],
+      "substitute_with": ["garden_roses", "ranunculus", "dahlias"],
+      "reason": "Similar lush romantic fullness"
+    },
+    "tulips_unavailable": {
+      "season": ["summer", "autumn"],
+      "substitute_with": ["ranunculus", "lisianthus"],
+      "reason": "Similar clean petal structure"
+    },
+    "dahlias_unavailable": {
+      "season": ["winter", "spring"],
+      "substitute_with": ["garden_roses", "ranunculus", "carnations"],
+      "reason": "Similar fullness and petal layers"
+    },
+    "sunflowers_unavailable": {
+      "season": ["winter", "spring"],
+      "substitute_with": ["large_mum_blooms", "bold_dahlias"],
+      "reason": "Similar bold focal impact"
+    }
+  },
+  "prompt_assembly_template": {
+    "structure": [
+      "1. Photography prefix (realistic)",
+      "2. Prestation type and setting",
+      "3. Arrangement style overview",
+      "4. Detailed flower composition (percentages + placement)",
+      "5. Foliage details (type + placement)",
+      "6. Vessel description (if applicable)",
+      "7. Overall density/spacing",
+      "8. Setting/location details",
+      "9. Lighting description",
+      "10. Camera/film specification",
+      "11. Style aesthetic final note"
+    ],
+    "example_flow": "Real photograph from [setting] → [prestation type] → [style] arrangement → [flower 1: %/placement] → [flower 2: %/placement] → [foliage: %/placement] → [density/gaps] → [setting details] → [lighting] → [camera] → [aesthetic]"
+  }
+}

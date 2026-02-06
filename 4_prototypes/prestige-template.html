@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500&family=Spectral:wght@300;400&family=Montserrat:wght@400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Spectral', serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 60px;
+        }
+
+        /* Prestation - Hero Offset */
+        .prestation-hero {
+            margin-bottom: 150px;
+            position: relative;
+        }
+
+        .prestation-hero-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .prestation-title-left {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            flex-shrink: 0;
+        }
+
+        .prestation-image-hero {
+            width: 900px;
+            height: 600px;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .prestation-description-hero {
+            max-width: 500px;
+            margin-top: 60px;
+        }
+
+        .prestation-description-hero p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .prestation-details-list {
+            list-style: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .prestation-details-list li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .prestation-details-list li:after {
+            content: "•";
+            margin-left: 20px;
+            color: #ccc;
+        }
+
+        .prestation-details-list li:last-child:after {
+            content: "";
+        }
+
+        .prestation-price-prestige {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-weight: 400;
+            text-align: right;
+        }
+
+        /* Prestation - Split Screen */
+        .prestation-split {
+            margin-bottom: 150px;
+            display: grid;
+            grid-template-columns: 40% 55%;
+            gap: 5%;
+            align-items: center;
+        }
+
+        .prestation-image-portrait {
+            width: 100%;
+            height: 800px;
+            background: linear-gradient(135deg, #e8d8d8 0%, #f0e6e6 100%);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .prestation-text-right h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .prestation-text-right p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 60px;
+        }
+
+        /* Moodboard - Magazine Spread */
+        .moodboard-prestige {
+            margin-top: 150px;
+        }
+
+        .moodboard-hero-section {
+            height: 80vh;
+            background: linear-gradient(135deg, #e8d8d8 0%, #f0e6e6 100%);
+            margin-bottom: 120px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 80px;
+        }
+
+        .moodboard-category-overlay {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+        }
+
+        .moodboard-grid-prestige {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 150px;
+            padding: 0 60px;
+        }
+
+        .moodboard-grid-image {
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #f0e6e6 0%, #e8d8d8 100%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Quote - Minimal Luxe */
+        .quote-prestige {
+            margin-top: 150px;
+            padding: 100px 120px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quote-prestige-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 100px;
+            letter-spacing: 1px;
+        }
+
+        .quote-category-prestige {
+            margin-bottom: 60px;
+        }
+
+        .quote-line-prestige {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+        }
+
+        .quote-line-prestige .category-name {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .quote-line-prestige .category-amount {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .quote-breakdown-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .quote-breakdown-link:hover {
+            color: #666;
+        }
+
+        .quote-divider {
+            width: 100%;
+            height: 1px;
+            background: #000;
+            margin: 80px 0 40px 0;
+        }
+
+        .quote-subtotal-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .quote-total-prestige {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #000;
+        }
+
+        .quote-note-prestige {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.8;
+            margin-top: 100px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 60px 40px;
+            }
+
+            .prestation-hero-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .prestation-title-left {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 40px;
+            }
+
+            .prestation-image-hero {
+                width: 100%;
+                height: 500px;
+            }
+
+            .prestation-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .prestation-image-portrait {
+                height: 600px;
+            }
+
+            .moodboard-grid-prestige {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .quote-prestige {
+                padding: 60px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .prestation-text-right h2 {
+                font-size: 36px;
+            }
+
+            .moodboard-category-overlay {
+                font-size: 48px;
+            }
+
+            .quote-prestige-title {
+                font-size: 40px;
+            }
+
+            .quote-total-prestige {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Prestation 1: Hero Offset (Landscape) -->
+        <div class="prestation-hero">
+            <div class="prestation-hero-content">
+                <h2 class="prestation-title-left">BRIDAL BOUQUET</h2>
+                <div class="prestation-image-hero">
+                    [Bridal Bouquet Landscape 3:2 - 900x600px]
+                </div>
+            </div>
+            <div class="prestation-description-hero">
+                <p>
+                    A hand-crafted arrangement of the season's most exquisite blooms—garden roses in creamy ivory, blush peonies at their peak, and unexpected touches of textural eucalyptus—all brought together with flowing hand-dyed silk ribbons that move like water.
+                </p>
+                <ul class="prestation-details-list">
+                    <li>Premium garden roses</li>
+                    <li>Hand-dyed silk ribbons</li>
+                    <li>Seasonal peak blooms</li>
+                    <li>Bespoke styling</li>
+                </ul>
+                <div class="prestation-price-prestige">$350 AUD</div>
+            </div>
+        </div>
+
+        <!-- Prestation 2: Split Screen (Portrait) -->
+        <div class="prestation-split">
+            <div class="prestation-image-portrait">
+                [Ceremony Arch Portrait 2:3 - 600x900px]
+            </div>
+            <div class="prestation-text-right">
+                <h2>CEREMONY ARCH</h2>
+                <p>
+                    A statement in sculptural beauty—this full ceremony arch creates a breathtaking backdrop where architecture meets nature. Lush seasonal blooms cascade in rich layers, framing your vows in unforgettable elegance. Each installation is designed to complement your venue's unique character.
+                </p>
+                <ul class="prestation-details-list">
+                    <li>Full architectural coverage</li>
+                    <li>Seasonal premium florals</li>
+                    <li>Professional installation</li>
+                    <li>Venue-specific design</li>
+                </ul>
+                <div class="prestation-price-prestige">$3,500 AUD</div>
+            </div>
+        </div>
+
+        <!-- Prestation 3: Hero Offset Alternate -->
+        <div class="prestation-hero">
+            <div class="prestation-hero-content" style="flex-direction: row-reverse;">
+                <div class="prestation-image-hero">
+                    [Bridal Table Landscape 16:9 - 900x506px]
+                </div>
+                <h2 class="prestation-title-left">BRIDAL TABLE</h2>
+            </div>
+            <div class="prestation-description-hero" style="text-align: right; margin-left: auto;">
+                <p>
+                    The centerpiece of your reception—a cascading floral feature that anchors your bridal table in dramatic beauty. Designed to be photographed from every angle, this installation becomes a living work of art throughout your celebration.
+                </p>
+                <ul class="prestation-details-list">
+                    <li>Cascading design</li>
+                    <li>360-degree styling</li>
+                    <li>Premium seasonal blooms</li>
+                </ul>
+                <div class="prestation-price-prestige">$500 AUD</div>
+            </div>
+        </div>
+
+        <!-- Moodboard - Magazine Spread Style -->
+        <div class="moodboard-prestige">
+            <!-- Ceremony Hero -->
+            <div class="moodboard-hero-section">
+                <div class="moodboard-category-overlay">CEREMONY</div>
+            </div>
+
+            <!-- Ceremony Grid -->
+            <div class="moodboard-grid-prestige">
+                <div class="moodboard-grid-image">[Image 1]</div>
+                <div class="moodboard-grid-image">[Image 2]</div>
+                <div class="moodboard-grid-image">[Image 3]</div>
+                <div class="moodboard-grid-image">[Image 4]</div>
+                <div class="moodboard-grid-image">[Image 5]</div>
+                <div class="moodboard-grid-image">[Image 6]</div>
+            </div>
+
+            <!-- Reception Hero -->
+            <div class="moodboard-hero-section">
+                <div class="moodboard-category-overlay">RECEPTION</div>
+            </div>
+
+            <!-- Reception Grid -->
+            <div class="moodboard-grid-prestige">
+                <div class="moodboard-grid-image">[Image 7]</div>
+                <div class="moodboard-grid-image">[Image 8]</div>
+                <div class="moodboard-grid-image">[Image 9]</div>
+                <div class="moodboard-grid-image">[Image 10]</div>
+            </div>
+        </div>
+
+        <!-- Quote - Minimal Luxe -->
+        <div class="quote-prestige">
+            <h1 class="quote-prestige-title">Your Investment</h1>
+
+            <div class="quote-category-prestige">
+                <div class="quote-line-prestige">
+                    <span class="category-name">Ceremony Florals</span>
+                    <span class="category-amount">$5,050</span>
+                </div>
+                <a href="#" class="quote-breakdown-link">View detailed breakdown ↓</a>
+            </div>
+
+            <div class="quote-category-prestige">
+                <div class="quote-line-prestige">
+                    <span class="category-name">Reception Florals</span>
+                    <span class="category-amount">$3,320</span>
+                </div>
+                <a href="#" class="quote-breakdown-link">View detailed breakdown ↓</a>
+            </div>
+
+            <div class="quote-divider"></div>
+
+            <div class="quote-subtotal-line">
+                <span>Subtotal</span>
+                <span>$8,370</span>
+            </div>
+            <div class="quote-subtotal-line">
+                <span>GST (10%)</span>
+                <span>$837</span>
+            </div>
+
+            <div class="quote-total-prestige">
+                <span>TOTAL</span>
+                <span>$9,207 AUD</span>
+            </div>
+
+            <p class="quote-note-prestige">
+                This investment reflects a bespoke floral experience tailored to your vision. Final details will be refined during our consultation to ensure every element exceeds your expectations.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

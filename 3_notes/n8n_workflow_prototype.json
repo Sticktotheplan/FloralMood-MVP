@@ -1,0 +1,410 @@
+{
+  "name": "FloralMood MVP - Moodboard Generation Prototype",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-moodboard",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook_trigger",
+      "name": "Webhook - Moodboard Request",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "floralmood-moodboard-gen",
+      "notes": "Receives moodboard generation request from frontend\n\nExpected Input:\n{\n  \"florist_id\": \"florist_123\",\n  \"client_brief\": {\n    \"wedding_date\": \"2026-06-15\",\n    \"style\": \"romantic_garden\",\n    \"colors\": [\"blush\", \"ivory\", \"sage\"]\n  },\n  \"prestations\": [\n    \"ceremony_arch_full\",\n    \"bridal_bouquet_cascading\"\n  ]\n}"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract and validate input data\nconst input = $input.item.json;\n\nconst floristId = input.florist_id;\nconst clientBrief = input.client_brief;\nconst prestations = input.prestations || [];\n\n// Determine season from wedding date\nfunction determineSeason(dateString) {\n  const date = new Date(dateString);\n  const month = date.getMonth() + 1; // 1-12\n  \n  // Australia (Southern Hemisphere)\n  if (month >= 9 && month <= 11) return 'spring';\n  if (month >= 12 || month <= 2) return 'summer';\n  if (month >= 3 && month <= 5) return 'autumn';\n  if (month >= 6 && month <= 8) return 'winter';\n  \n  return 'unknown';\n}\n\nconst season = determineSeason(clientBrief.wedding_date);\n\n// Prepare output\nreturn {\n  json: {\n    florist_id: floristId,\n    wedding_date: clientBrief.wedding_date,\n    season: season,\n    month: new Date(clientBrief.wedding_date).getMonth() + 1,\n    style: clientBrief.style,\n    colors: clientBrief.colors,\n    prestations: prestations,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "function_parse_input",
+      "name": "Parse & Validate Input",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "notes": "Extracts request data and determines wedding season"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/database/florist-profile/{{$json[\"florist_id\"]}}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "http_load_profile",
+      "name": "Load Florist Portfolio Profile",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [650, 300],
+      "notes": "Retrieves florist's analyzed portfolio profile from database\n\nMock Response:\n{\n  \"florist_id\": \"florist_123\",\n  \"portfolio_analysis\": {\n    \"flower_ratios\": {\"garden_roses\": 35, \"eucalyptus\": 30, ...},\n    \"arrangement_style\": \"organic_asymmetric\",\n    \"color_palette\": [\"#F5E8E1\", \"#D4A5A5\"],\n    \"signature_combinations\": [...]\n  }\n}"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Seasonal Validation Logic\nconst season = $input.item.json.season;\nconst portfolioProfile = $node[\"Load Florist Portfolio Profile\"].json.portfolio_analysis;\n\n// Mock seasonal flowers database\nconst SEASONAL_FLOWERS = {\n  spring: ['tulips', 'peonies', 'ranunculus', 'sweet_peas', 'hellebores', 'eucalyptus'],\n  summer: ['garden_roses', 'dahlias', 'lisianthus', 'hydrangeas', 'eucalyptus'],\n  autumn: ['dahlias', 'chrysanthemums', 'marigolds', 'asters', 'eucalyptus'],\n  winter: ['amaryllis', 'hellebores', 'anemones', 'roses', 'eucalyptus']\n};\n\n// Get available flowers for season\nconst availableFlowers = SEASONAL_FLOWERS[season] || [];\n\n// Extract portfolio flowers\nconst portfolioFlowers = Object.keys(portfolioProfile.flower_ratios || {});\n\n// Validate and substitute\nconst validatedFlowers = [];\nconst substitutions = [];\n\nportfolioFlowers.forEach(flower => {\n  if (availableFlowers.includes(flower)) {\n    validatedFlowers.push({\n      name: flower,\n      ratio: portfolioProfile.flower_ratios[flower],\n      status: 'valid'\n    });\n  } else {\n    // Find substitute\n    let substitute = 'garden_roses'; // Default substitute\n    \n    if (flower === 'peonies') substitute = 'garden_roses';\n    if (flower === 'tulips') substitute = 'ranunculus';\n    if (flower === 'sunflowers') substitute = 'dahlias';\n    \n    validatedFlowers.push({\n      name: substitute,\n      ratio: portfolioProfile.flower_ratios[flower],\n      status: 'substituted',\n      original: flower\n    });\n    \n    substitutions.push({\n      original: flower,\n      substitute: substitute,\n      reason: `${flower} not available in ${season}`\n    });\n  }\n});\n\nreturn {\n  json: {\n    ...($input.item.json),\n    validated_flowers: validatedFlowers,\n    substitutions: substitutions,\n    portfolio_profile: portfolioProfile\n  }\n};"
+      },
+      "id": "function_seasonal_validation",
+      "name": "Seasonal Validation & Substitution",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "notes": "Validates portfolio flowers against seasonal availability\nSubstitutes unavailable flowers with similar alternatives"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prestation",
+              "name": "prestation",
+              "value": "={{ $json.prestations }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "split_prestations",
+      "name": "Split Into Prestations",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [1050, 300],
+      "notes": "Splits array of prestations to process each individually"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$credentials.openAiApi.apiKey}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4-turbo\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a floral prompt engineering agent for AI image generation. Generate ultra-specific, photographically realistic prompts for wedding florals based on florist portfolio analysis and client requirements. Use exact percentages, placement details, and photography specifications.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Generate a detailed DALL-E 3 prompt for: {{ $json.prestation }}\\n\\nFlorist Style Profile:\\n- Flowers: {{ $json.validated_flowers }}\\n- Arrangement Style: {{ $json.portfolio_profile.arrangement_style }}\\n- Color Palette: {{ $json.portfolio_profile.color_palette }}\\n\\nClient Brief:\\n- Season: {{ $json.season }}\\n- Style: {{ $json.style }}\\n- Colors: {{ $json.colors }}\\n\\nFollow these rules:\\n1. Start with 'Real photograph from'\\n2. Use exact percentages for flower ratios\\n3. Specify placements (left-heavy, cascading, etc.)\\n4. Include camera spec (Nikon D850, Canon 5D)\\n5. Include film aesthetic (Kodak Portra 400)\\n6. Add natural lighting description\\n7. Include negative prompt\\n\\nReturn JSON format:\\n{\\n  \\\"prompt\\\": \\\"...\\\",\\n  \\\"negative_prompt\\\": \\\"...\\\"\\n}\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"response_format\": { \"type\": \"json_object\" }\n}",
+        "options": {}
+      },
+      "id": "http_generate_metaprompt",
+      "name": "Generate Meta-Prompt (GPT-4)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1250, 300],
+      "notes": "Calls GPT-4 to generate ultra-specific DALL-E 3 prompt\nusing portfolio analysis and prompt rules"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract generated prompt from GPT-4 response\nconst gptResponse = $input.item.json;\nconst messageContent = gptResponse.choices[0].message.content;\nconst promptData = JSON.parse(messageContent);\n\nreturn {\n  json: {\n    prestation: $node[\"Split Into Prestations\"].json.prestation,\n    generated_prompt: promptData.prompt,\n    negative_prompt: promptData.negative_prompt,\n    florist_id: $node[\"Parse & Validate Input\"].json.florist_id,\n    season: $node[\"Parse & Validate Input\"].json.season\n  }\n};"
+      },
+      "id": "function_parse_prompt",
+      "name": "Parse Generated Prompt",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/generations",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$credentials.openAiApi.apiKey}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"dall-e-3\",\n  \"prompt\": \"{{ $json.generated_prompt }}\",\n  \"n\": 1,\n  \"size\": \"1024x1024\",\n  \"quality\": \"hd\",\n  \"style\": \"natural\"\n}",
+        "options": {}
+      },
+      "id": "http_generate_image",
+      "name": "Generate Image (DALL-E 3)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1650, 300],
+      "notes": "Calls DALL-E 3 API with generated prompt\nGenerates HD quality image (1024x1024)"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract image URL from DALL-E response\nconst dalleResponse = $input.item.json;\nconst imageUrl = dalleResponse.data[0].url;\n\nreturn {\n  json: {\n    prestation: $node[\"Parse Generated Prompt\"].json.prestation,\n    image_url: imageUrl,\n    prompt_used: $node[\"Parse Generated Prompt\"].json.generated_prompt,\n    negative_prompt: $node[\"Parse Generated Prompt\"].json.negative_prompt,\n    generated_at: new Date().toISOString()\n  }\n};"
+      },
+      "id": "function_extract_image",
+      "name": "Extract Image URL",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1850, 300]
+    },
+    {
+      "parameters": {},
+      "id": "aggregate_results",
+      "name": "Aggregate All Prestations",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [2050, 300],
+      "notes": "Collects all generated images for all prestations"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.example.com/moodboards/save",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"florist_id\": \"{{ $node[\"Parse & Validate Input\"].json.florist_id }}\",\n  \"wedding_date\": \"{{ $node[\"Parse & Validate Input\"].json.wedding_date }}\",\n  \"season\": \"{{ $node[\"Parse & Validate Input\"].json.season }}\",\n  \"images\": {{ $json }},\n  \"substitutions\": {{ $node[\"Seasonal Validation & Substitution\"].json.substitutions }},\n  \"created_at\": \"{{ $now }}\"\n}",
+        "options": {}
+      },
+      "id": "http_save_moodboard",
+      "name": "Save Moodboard to Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [2250, 300],
+      "notes": "Saves generated moodboard with all images to database"
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@floralmood.com",
+        "toEmail": "={{ $node[\"Parse & Validate Input\"].json.florist_email }}",
+        "subject": "Moodboard Ready - {{ $node[\"Parse & Validate Input\"].json.client_name }}",
+        "emailType": "html",
+        "message": "=<html>\n<body style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h1 style=\"color: #D4A5A5;\">🌸 Your Moodboard is Ready!</h1>\n  \n  <p>Hi {{ $node[\"Load Florist Portfolio Profile\"].json.florist_name }},</p>\n  \n  <p>We've generated a beautiful moodboard for your client's {{ $node[\"Parse & Validate Input\"].json.season }} wedding.</p>\n  \n  <h2>Wedding Details</h2>\n  <ul>\n    <li><strong>Date:</strong> {{ $node[\"Parse & Validate Input\"].json.wedding_date }}</li>\n    <li><strong>Season:</strong> {{ $node[\"Parse & Validate Input\"].json.season }}</li>\n    <li><strong>Style:</strong> {{ $node[\"Parse & Validate Input\"].json.style }}</li>\n  </ul>\n  \n  <h2>Prestations Generated</h2>\n  <ul>\n    {{ $node[\"Parse & Validate Input\"].json.prestations.map(p => `<li>${p}</li>`).join('') }}\n  </ul>\n  \n  {{ $node[\"Seasonal Validation & Substitution\"].json.substitutions.length > 0 ? `\n  <h2>⚠️ Seasonal Adjustments</h2>\n  <p>We made some flower substitutions to ensure seasonal availability:</p>\n  <ul>\n    ${ $node[\"Seasonal Validation & Substitution\"].json.substitutions.map(s => \n      `<li><strong>${s.original}</strong> → ${s.substitute} (${s.reason})</li>`\n    ).join('') }\n  </ul>\n  ` : ''}\n  \n  <p style=\"margin-top: 30px;\">\n    <a href=\"https://app.floralmood.com/moodboards/{{ $node[\"Save Moodboard to Database\"].json.moodboard_id }}\" \n       style=\"background-color: #D4A5A5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;\">\n      View Moodboard\n    </a>\n  </p>\n  \n  <p style=\"color: #666; font-size: 14px; margin-top: 40px;\">\n    Generated with FloralMood AI<br>\n    Need help? Reply to this email\n  </p>\n</body>\n</html>",
+        "options": {}
+      },
+      "id": "send_email",
+      "name": "Send Email to Florist",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [2450, 300],
+      "notes": "Sends email notification to florist with moodboard link"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"moodboard_id\": \"{{ $node[\"Save Moodboard to Database\"].json.moodboard_id }}\",\n  \"images_generated\": {{ $node[\"Aggregate All Prestations\"].json.length }},\n  \"substitutions\": {{ $node[\"Seasonal Validation & Substitution\"].json.substitutions.length }},\n  \"season\": \"{{ $node[\"Parse & Validate Input\"].json.season }}\",\n  \"message\": \"Moodboard generated successfully\"\n}",
+        "options": {}
+      },
+      "id": "webhook_response",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2650, 300],
+      "notes": "Returns success response to frontend"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "error_check",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_error",
+      "name": "Check for Errors",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [850, 500],
+      "notes": "Catches any errors in the workflow"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"error\": \"{{ $json.error }}\",\n  \"message\": \"Failed to generate moodboard\"\n}",
+        "options": {}
+      },
+      "id": "webhook_error_response",
+      "name": "Return Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 500]
+    }
+  ],
+  "connections": {
+    "Webhook - Moodboard Request": {
+      "main": [
+        [
+          {
+            "node": "Parse & Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse & Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Load Florist Portfolio Profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Florist Portfolio Profile": {
+      "main": [
+        [
+          {
+            "node": "Seasonal Validation & Substitution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Seasonal Validation & Substitution": {
+      "main": [
+        [
+          {
+            "node": "Split Into Prestations",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check for Errors",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Into Prestations": {
+      "main": [
+        [
+          {
+            "node": "Generate Meta-Prompt (GPT-4)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Meta-Prompt (GPT-4)": {
+      "main": [
+        [
+          {
+            "node": "Parse Generated Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Generated Prompt": {
+      "main": [
+        [
+          {
+            "node": "Generate Image (DALL-E 3)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Image (DALL-E 3)": {
+      "main": [
+        [
+          {
+            "node": "Extract Image URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Image URL": {
+      "main": [
+        [
+          {
+            "node": "Aggregate All Prestations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate All Prestations": {
+      "main": [
+        [
+          {
+            "node": "Save Moodboard to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Moodboard to Database": {
+      "main": [
+        [
+          {
+            "node": "Send Email to Florist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email to Florist": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check for Errors": {
+      "main": [
+        [
+          {
+            "node": "Return Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-02-06T00:00:00.000Z",
+  "versionId": "1.0"
+}

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Minimal Template - FloralMood Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 120px 120px;
+        }
+
+        /* Ultra-minimal header */
+        .header {
+            text-align: center;
+            margin-bottom: 200px;
+            padding-bottom: 80px;
+            border-bottom: 0.5px solid #E8E8E8;
+        }
+
+        .logo {
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 40px;
+        }
+
+        .header-date {
+            font-size: 8px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #AAAAAA;
+        }
+
+        /* Prestation - Maximum white space */
+        .prestation-minimal {
+            margin-bottom: 280px;
+        }
+
+        /* Single centered image with massive margins */
+        .prestation-image-centered {
+            width: 600px;
+            height: 500px;
+            margin: 0 auto 100px auto;
+            background: linear-gradient(135deg, #F8F8F8 0%, #F0F0F0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #CCCCCC;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        /* Minimal text block - tiny, precise */
+        .prestation-details-minimal {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .prestation-number {
+            font-size: 7px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #BBBBBB;
+            margin-bottom: 20px;
+        }
+
+        .prestation-title-minimal {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+
+        .prestation-description-minimal {
+            font-size: 9px;
+            font-weight: 300;
+            line-height: 2.2;
+            color: #666666;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        .prestation-price-minimal {
+            font-size: 9px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #000000;
+        }
+
+        /* Landscape orientation */
+        .prestation-landscape .prestation-image-centered {
+            width: 800px;
+            height: 450px;
+        }
+
+        /* Portrait orientation */
+        .prestation-portrait .prestation-image-centered {
+            width: 450px;
+            height: 600px;
+        }
+
+        /* Square orientation */
+        .prestation-square .prestation-image-centered {
+            width: 550px;
+            height: 550px;
+        }
+
+        /* Moodboard - Maximum spacing */
+        .moodboard-minimal {
+            margin-top: 280px;
+        }
+
+        .moodboard-section-minimal {
+            margin-bottom: 280px;
+        }
+
+        .section-label-minimal {
+            text-align: center;
+            font-size: 7px;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #AAAAAA;
+            margin-bottom: 120px;
+        }
+
+        /* Ultra-spaced grid */
+        .moodboard-grid-minimal {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .moodboard-grid-minimal .grid-item {
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #F8F8F8 0%, #F0F0F0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #DDDDDD;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        /* Quote - Minimal table structure */
+        .quote-minimal {
+            margin-top: 280px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 100px 80px;
+            border: 0.5px solid #E8E8E8;
+        }
+
+        .quote-title-minimal {
+            text-align: center;
+            font-size: 8px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #AAAAAA;
+            margin-bottom: 100px;
+        }
+
+        .quote-category-minimal {
+            margin-bottom: 60px;
+        }
+
+        .quote-category-label-minimal {
+            font-size: 7px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #BBBBBB;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 0.5px solid #F0F0F0;
+        }
+
+        .quote-line-minimal {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            font-size: 9px;
+            font-weight: 300;
+            color: #666666;
+            letter-spacing: 1px;
+        }
+
+        .quote-line-minimal .amount {
+            font-weight: 300;
+            color: #000000;
+            letter-spacing: 2px;
+        }
+
+        .quote-subtotal-minimal {
+            border-top: 0.5px solid #E8E8E8;
+            margin-top: 20px;
+            padding-top: 20px;
+            font-weight: 400;
+        }
+
+        .quote-divider-minimal {
+            height: 0.5px;
+            background: #000000;
+            margin: 80px 0;
+        }
+
+        .quote-total-minimal {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            font-weight: 400;
+            color: #000000;
+            letter-spacing: 4px;
+            padding-top: 30px;
+            border-top: 1px solid #000000;
+        }
+
+        .quote-note-minimal {
+            text-align: center;
+            font-size: 7px;
+            font-weight: 300;
+            line-height: 2.4;
+            color: #AAAAAA;
+            margin-top: 80px;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .container {
+                padding: 100px 80px;
+            }
+
+            .prestation-image-centered,
+            .prestation-landscape .prestation-image-centered,
+            .prestation-portrait .prestation-image-centered,
+            .prestation-square .prestation-image-centered {
+                width: 100%;
+                max-width: 700px;
+                height: auto;
+                aspect-ratio: 4/3;
+            }
+
+            .moodboard-grid-minimal {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 80px 40px;
+            }
+
+            .header {
+                margin-bottom: 120px;
+            }
+
+            .prestation-minimal {
+                margin-bottom: 180px;
+            }
+
+            .moodboard-grid-minimal {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .quote-minimal {
+                padding: 60px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Minimal Header -->
+        <div class="header">
+            <div class="logo">SARAH BLOOMS</div>
+            <div class="header-date">PROPOSAL — JANUARY 2026</div>
+        </div>
+
+        <!-- Prestation 1: Landscape -->
+        <div class="prestation-minimal prestation-landscape">
+            <div class="prestation-image-centered">
+                [BRIDAL BOUQUET — LANDSCAPE 16:9]
+            </div>
+            <div class="prestation-details-minimal">
+                <div class="prestation-number">01</div>
+                <div class="prestation-title-minimal">Bridal Bouquet</div>
+                <p class="prestation-description-minimal">
+                    Hand-tied arrangement of seasonal blooms. Each stem selected for form and proportion.
+                    Ribbon finish in natural silk. Crafted to complement the ceremony aesthetic.
+                </p>
+                <div class="prestation-price-minimal">AUD 350</div>
+            </div>
+        </div>
+
+        <!-- Prestation 2: Portrait -->
+        <div class="prestation-minimal prestation-portrait">
+            <div class="prestation-image-centered">
+                [CEREMONY ARCH — PORTRAIT 3:4]
+            </div>
+            <div class="prestation-details-minimal">
+                <div class="prestation-number">02</div>
+                <div class="prestation-title-minimal">Ceremony Arch</div>
+                <p class="prestation-description-minimal">
+                    Architectural installation designed for your venue. Seasonal florals arranged with
+                    precision and restraint. Structure built on-site to ensure proper scale and balance.
+                </p>
+                <div class="prestation-price-minimal">AUD 3,500</div>
+            </div>
+        </div>
+
+        <!-- Prestation 3: Square -->
+        <div class="prestation-minimal prestation-square">
+            <div class="prestation-image-centered">
+                [BRIDAL TABLE — SQUARE 1:1]
+            </div>
+            <div class="prestation-details-minimal">
+                <div class="prestation-number">03</div>
+                <div class="prestation-title-minimal">Bridal Table</div>
+                <p class="prestation-description-minimal">
+                    Centerpiece arrangement for the reception table. Low profile to maintain sightlines.
+                    Composed of premium seasonal blooms selected for longevity and visual impact.
+                </p>
+                <div class="prestation-price-minimal">AUD 500</div>
+            </div>
+        </div>
+
+        <!-- Prestation 4: Landscape -->
+        <div class="prestation-minimal prestation-landscape">
+            <div class="prestation-image-centered">
+                [CENTERPIECES — LANDSCAPE 16:9]
+            </div>
+            <div class="prestation-details-minimal">
+                <div class="prestation-number">04</div>
+                <div class="prestation-title-minimal">Centerpieces</div>
+                <p class="prestation-description-minimal">
+                    Guest table arrangements. Twelve pieces designed as a cohesive collection.
+                    Each composition unique while maintaining unified aesthetic throughout the space.
+                </p>
+                <div class="prestation-price-minimal">AUD 2,640</div>
+            </div>
+        </div>
+
+        <!-- Moodboard -->
+        <div class="moodboard-minimal">
+            <!-- Ceremony Section -->
+            <div class="moodboard-section-minimal">
+                <div class="section-label-minimal">CEREMONY</div>
+                <div class="moodboard-grid-minimal">
+                    <div class="grid-item">[01]</div>
+                    <div class="grid-item">[02]</div>
+                    <div class="grid-item">[03]</div>
+                    <div class="grid-item">[04]</div>
+                    <div class="grid-item">[05]</div>
+                    <div class="grid-item">[06]</div>
+                </div>
+            </div>
+
+            <!-- Reception Section -->
+            <div class="moodboard-section-minimal">
+                <div class="section-label-minimal">RECEPTION</div>
+                <div class="moodboard-grid-minimal">
+                    <div class="grid-item">[07]</div>
+                    <div class="grid-item">[08]</div>
+                    <div class="grid-item">[09]</div>
+                    <div class="grid-item">[10]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-minimal">
+            <div class="quote-title-minimal">Investment</div>
+
+            <div class="quote-category-minimal">
+                <div class="quote-category-label-minimal">Ceremony</div>
+                <div class="quote-line-minimal">
+                    <span>Bridal Bouquet</span>
+                    <span class="amount">350</span>
+                </div>
+                <div class="quote-line-minimal">
+                    <span>Bridesmaid Bouquets (4)</span>
+                    <span class="amount">720</span>
+                </div>
+                <div class="quote-line-minimal">
+                    <span>Ceremony Arch</span>
+                    <span class="amount">3,500</span>
+                </div>
+                <div class="quote-line-minimal">
+                    <span>Boutonnières (8)</span>
+                    <span class="amount">200</span>
+                </div>
+                <div class="quote-line-minimal">
+                    <span>Signing Table</span>
+                    <span class="amount">280</span>
+                </div>
+                <div class="quote-line-minimal quote-subtotal-minimal">
+                    <span>Subtotal</span>
+                    <span class="amount">5,050</span>
+                </div>
+            </div>
+
+            <div class="quote-category-minimal">
+                <div class="quote-category-label-minimal">Reception</div>
+                <div class="quote-line-minimal">
+                    <span>Centerpieces (12)</span>
+                    <span class="amount">2,640</span>
+                </div>
+                <div class="quote-line-minimal">
+                    <span>Bridal Table</span>
+                    <span class="amount">500</span>
+                </div>
+                <div class="quote-line-minimal">
+                    <span>Cake Flowers</span>
+                    <span class="amount">180</span>
+                </div>
+                <div class="quote-line-minimal quote-subtotal-minimal">
+                    <span>Subtotal</span>
+                    <span class="amount">3,320</span>
+                </div>
+            </div>
+
+            <div class="quote-divider-minimal"></div>
+
+            <div class="quote-line-minimal">
+                <span>Subtotal</span>
+                <span class="amount">8,370</span>
+            </div>
+            <div class="quote-line-minimal">
+                <span>GST (10%)</span>
+                <span class="amount">837</span>
+            </div>
+
+            <div class="quote-total-minimal">
+                <span>TOTAL</span>
+                <span>9,207 AUD</span>
+            </div>
+
+            <p class="quote-note-minimal">
+                Investment reflects scope outlined above.<br>
+                Final details confirmed during consultation.<br>
+                Pricing subject to seasonal availability.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
