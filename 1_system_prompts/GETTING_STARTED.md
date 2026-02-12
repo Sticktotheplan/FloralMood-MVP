@@ -21,9 +21,11 @@
 ### 1. Installer Node.js (20 LTS)
 
 **Windows:**
+
 1. Télécharger [Node.js 20 LTS](https://nodejs.org/)
 2. Exécuter l'installateur
 3. Vérifier installation:
+
    ```bash
    node --version
    # Devrait afficher: v20.x.x
@@ -33,6 +35,7 @@
    ```
 
 **Mac:**
+
 ```bash
 # Installer Homebrew (si pas déjà installé)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,6 +53,7 @@ npm --version
 ### 2. Installer Git
 
 **Windows:**
+
 1. Télécharger [Git for Windows](https://git-scm.com/download/win)
 2. Exécuter l'installateur (laisser options par défaut)
 3. Vérifier:
@@ -59,6 +63,7 @@ npm --version
    ```
 
 **Mac:**
+
 ```bash
 # Git est inclus dans Xcode Command Line Tools
 xcode-select --install
@@ -81,6 +86,7 @@ git --version
    - Supabase (optional)
 
 **Configuration VS Code:**
+
 ```json
 // Ouvrir: File > Preferences > Settings (JSON)
 {
@@ -99,11 +105,13 @@ git --version
 ### 4. Créer Comptes Services
 
 #### **A. GitHub**
+
 1. Aller sur [github.com](https://github.com)
 2. Créer compte gratuit
 3. Vérifier email
 
 #### **B. Supabase**
+
 1. Aller sur [supabase.com](https://supabase.com)
 2. Créer compte gratuit (sign up with GitHub)
 3. Créer premier projet: "floralmood-mvp"
@@ -111,11 +119,13 @@ git --version
    - Password: Générer automatiquement (save it!)
 
 #### **C. Vercel**
+
 1. Aller sur [vercel.com](https://vercel.com)
 2. Sign up with GitHub
 3. Connecter votre compte GitHub
 
 #### **D. OpenAI** (optionnel pour Mois 5)
+
 1. Aller sur [platform.openai.com](https://platform.openai.com)
 2. Créer compte
 3. Ajouter méthode de paiement ($5 minimum)
@@ -128,11 +138,13 @@ git --version
 **Note:** Claude Code est déjà installé si vous utilisez la CLI Anthropic.
 
 **Vérifier installation:**
+
 ```bash
 claude --version
 ```
 
 **Si pas installé:**
+
 ```bash
 # Installer via npm
 npm install -g @anthropic-ai/claude-code
@@ -250,18 +262,21 @@ touch .env
 
 **Créer fichier:** `PROMPT_TODO_APP.md`
 
-```markdown
+````markdown
 # Project: Todo App - CRUD API
 
 ## Context
+
 I'm learning AI-First development with Claude Code. This is a practice project to understand workflow.
 
 ## Objective
+
 Create a simple Todo API with CRUD operations (Create, Read, Update, Delete).
 
 ## Technical Specifications
 
 ### Stack
+
 - **Backend:** Node.js + Express
 - **Data Storage:** In-memory array (no database for simplicity)
 - **Port:** 3000
@@ -269,24 +284,29 @@ Create a simple Todo API with CRUD operations (Create, Read, Update, Delete).
 ### API Endpoints
 
 **1. GET /api/todos**
+
 - List all todos
 - Response: `{ todos: [...] }`
 
 **2. POST /api/todos**
+
 - Create new todo
 - Body: `{ title: string, description?: string }`
 - Response: `{ todo: {...}, message: "Todo created" }`
 
 **3. PATCH /api/todos/:id**
+
 - Mark todo as complete/incomplete
 - Body: `{ completed: boolean }`
 - Response: `{ todo: {...}, message: "Todo updated" }`
 
 **4. DELETE /api/todos/:id**
+
 - Delete todo
 - Response: `{ message: "Todo deleted" }`
 
 ### Data Model
+
 ```javascript
 {
   id: string (UUID),
@@ -297,22 +317,27 @@ Create a simple Todo API with CRUD operations (Create, Read, Update, Delete).
   updatedAt: Date
 }
 ```
+````
 
 ### Validation
+
 - title: Required, 1-100 characters
 - description: Optional, max 500 characters
 
 ### Error Handling
+
 - 400: Invalid input
 - 404: Todo not found
 - 500: Server error
 
 ## Constraints
+
 - **Simple:** No database (in-memory only)
 - **Clean:** Separate routes, controllers, services
 - **Comments:** Add comments for learning
 
 ## Acceptance Criteria
+
 - [ ] Server starts on port 3000
 - [ ] All 4 endpoints work correctly
 - [ ] Validation errors return 400
@@ -320,6 +345,7 @@ Create a simple Todo API with CRUD operations (Create, Read, Update, Delete).
 - [ ] Can test with Postman/curl
 
 ## Files to Create
+
 1. `src/server.js` - Express server setup
 2. `src/routes/todoRoutes.js` - Route definitions
 3. `src/controllers/todoController.js` - Request handlers
@@ -329,9 +355,11 @@ Create a simple Todo API with CRUD operations (Create, Read, Update, Delete).
    - `"dev": "nodemon src/server.js"`
 
 ## References
+
 - Express docs: https://expressjs.com/
 - Similar project: Simple REST API tutorial
-```
+
+````
 
 ---
 
@@ -345,9 +373,10 @@ claude code
 
 # Ou si vous utilisez la session CLI actuelle, donner le prompt:
 # Copier-coller le contenu de PROMPT_TODO_APP.md
-```
+````
 
 **Prompt:**
+
 ```
 I want to create a simple Todo API. Please read the specifications in PROMPT_TODO_APP.md and implement the project.
 
@@ -355,6 +384,7 @@ Use plan mode first to show me the architecture, then implement step by step.
 ```
 
 **Claude va:**
+
 1. Lire votre prompt
 2. Proposer un plan (architecture, fichiers)
 3. Demander votre validation
@@ -369,6 +399,7 @@ Use plan mode first to show me the architecture, then implement step by step.
 
 ```markdown
 ## Functionality Review
+
 - [ ] Tous les fichiers créés?
   - src/server.js
   - src/routes/todoRoutes.js
@@ -380,19 +411,22 @@ Use plan mode first to show me the architecture, then implement step by step.
   - "dev" command exists?
 
 ## Code Quality Review
+
 - [ ] Code lisible et commenté?
 - [ ] Separation of concerns (routes/controllers/services)?
 - [ ] Error handling present?
 - [ ] Validation implemented?
 
 ## Security Review
+
 - [ ] No hardcoded secrets?
 - [ ] Input validation working?
 - [ ] Error messages not exposing internals?
 ```
 
 **Si problèmes identifiés:**
-```
+
+````
 I found 2 issues in the generated code:
 
 1. Missing input validation for title (should be 1-100 chars)
@@ -403,13 +437,14 @@ I found 2 issues in the generated code:
    if (!title || title.length < 1 || title.length > 100) {
      return res.status(400).json({ error: "Title must be 1-100 characters" })
    }
-   ```
+````
 
 2. Error handling missing for invalid ID format
    File: src/services/todoService.js, line 45
 
    Please add try-catch around UUID operations.
-```
+
+````
 
 ---
 
@@ -421,7 +456,7 @@ npm run dev
 
 # Le serveur devrait afficher:
 # Server running on http://localhost:3000
-```
+````
 
 **Tester avec curl:**
 
@@ -448,6 +483,7 @@ curl -X DELETE http://localhost:3000/api/todos/[ID]
 ```
 
 **Ou utiliser Postman:**
+
 1. Télécharger [Postman](https://www.postman.com/downloads/)
 2. Créer nouvelle collection "Todo API"
 3. Ajouter 4 requests (GET, POST, PATCH, DELETE)
@@ -476,6 +512,7 @@ Please implement these features maintaining the existing code structure.
 ```
 
 **Claude va:**
+
 1. Analyser code existant
 2. Proposer modifications
 3. Implémenter features
@@ -487,18 +524,20 @@ Please implement these features maintaining the existing code structure.
 
 **Créer README.md:**
 
-```markdown
+````markdown
 # Todo API - Learning Claude Code
 
 Simple CRUD API built with Claude Code to learn AI-First development workflow.
 
 ## Features
+
 - ✅ Create todos
 - ✅ List all todos (with pagination & search)
 - ✅ Mark todos complete/incomplete
 - ✅ Delete todos
 
 ## Tech Stack
+
 - Node.js 20 LTS
 - Express.js
 - In-memory storage (no database)
@@ -508,6 +547,7 @@ Simple CRUD API built with Claude Code to learn AI-First development workflow.
 ```bash
 npm install
 ```
+````
 
 ## Usage
 
@@ -524,23 +564,27 @@ Server runs on `http://localhost:3000`
 ## API Endpoints
 
 ### List Todos
+
 ```
 GET /api/todos?page=1&limit=10&search=keyword
 ```
 
 ### Create Todo
+
 ```
 POST /api/todos
 Body: { "title": "string", "description": "string" }
 ```
 
 ### Update Todo
+
 ```
 PATCH /api/todos/:id
 Body: { "completed": boolean }
 ```
 
 ### Delete Todo
+
 ```
 DELETE /api/todos/:id
 ```
@@ -548,12 +592,14 @@ DELETE /api/todos/:id
 ## Learning Notes
 
 **What I learned:**
+
 - How to write effective prompts for Claude Code
 - How to review AI-generated code (functionality, security, quality)
 - How to request improvements and corrections
 - Workflow: Prompt → Plan → Implement → Review → Iterate
 
 **Time spent:**
+
 - Initial implementation: 30 min (Claude)
 - Code review: 20 min (me)
 - Testing: 15 min (me)
@@ -561,10 +607,12 @@ DELETE /api/todos/:id
 - **Total: ~1.5 hours** (vs 4-6h manual coding)
 
 **AI-First advantage:**
+
 - 70-80% time saved on implementation
 - Focus on architecture & specs instead of syntax
 - Faster iteration cycles
-```
+
+````
 
 ---
 
@@ -587,7 +635,7 @@ gh repo create todo-app-claude --public --source=. --remote=origin
 
 # Push
 git push -u origin main
-```
+````
 
 ---
 
@@ -643,6 +691,7 @@ claude --help
 ### Problème 1: "node: command not found"
 
 **Solution:**
+
 ```bash
 # Windows: Redémarrer terminal après installation Node.js
 
@@ -660,6 +709,7 @@ source ~/.zshrc
 ### Problème 2: "Port 3000 already in use"
 
 **Solution:**
+
 ```bash
 # Windows: Trouver processus
 netstat -ano | findstr :3000
@@ -678,6 +728,7 @@ kill -9 <PID>
 ### Problème 3: "Cannot find module 'express'"
 
 **Solution:**
+
 ```bash
 # Réinstaller dépendances
 rm -rf node_modules package-lock.json
@@ -689,6 +740,7 @@ npm install
 ### Problème 4: Claude Code ne répond pas
 
 **Solution:**
+
 1. Vérifier connexion internet
 2. Vérifier API key (si applicable)
 3. Essayer dans nouveau terminal
@@ -699,6 +751,7 @@ npm install
 ### Problème 5: Git push échoue (permission denied)
 
 **Solution:**
+
 ```bash
 # Configurer SSH key pour GitHub
 ssh-keygen -t ed25519 -C "votre@email.com"
@@ -778,18 +831,22 @@ ssh -T git@github.com
 ### Tutoriels Beginner-Friendly
 
 **JavaScript:**
+
 - [JavaScript.info](https://javascript.info/) - Complet, gratuit
 - [Codecademy JavaScript](https://www.codecademy.com/learn/introduction-to-javascript) - Interactif
 
 **Node.js:**
+
 - [Node.js Getting Started](https://nodejs.org/en/docs/guides/getting-started-guide/)
 - [Fireship Node.js Crash Course](https://www.youtube.com/watch?v=ENrzD9HAZK4)
 
 **Git:**
+
 - [Git Handbook (GitHub)](https://guides.github.com/introduction/git-handbook/)
 - [Learn Git Branching](https://learngitbranching.js.org/) - Interactif
 
 **Claude Code:**
+
 - [Anthropic Claude Code Docs](https://www.anthropic.com/claude-code)
 - `AI_ORCHESTRATION_GUIDE.md` (ce projet)
 - `LEARNING_PATH.md` (ce projet)
@@ -799,15 +856,18 @@ ssh -T git@github.com
 ### Communautés & Support
 
 **Discord:**
+
 - Anthropic Claude Developers
 - AI Orchestration Community
 
 **Reddit:**
+
 - r/ClaudeAI
 - r/webdev
 - r/learnprogramming
 
 **Stack Overflow:**
+
 - Tag: [claude-code]
 - Tag: [node.js]
 - Tag: [express]
@@ -817,6 +877,7 @@ ssh -T git@github.com
 ### Tools & Extensions
 
 **VS Code Extensions:**
+
 - ESLint: Linting JavaScript
 - Prettier: Code formatting
 - GitLens: Git integration
@@ -824,10 +885,12 @@ ssh -T git@github.com
 - REST Client: Test APIs (alternative Postman)
 
 **Browser Extensions:**
+
 - JSON Viewer: Pretty print JSON
 - React Developer Tools: Debug React (Mois 3+)
 
 **CLI Tools:**
+
 - [httpie](https://httpie.io/): Better curl
 - [jq](https://stedolan.github.io/jq/): JSON processor
 - [tldr](https://tldr.sh/): Simplified man pages
@@ -837,6 +900,7 @@ ssh -T git@github.com
 ## ✅ CHECKLIST SETUP COMPLET
 
 ### Outils Installés
+
 - [ ] Node.js 20 LTS (`node --version`)
 - [ ] npm (`npm --version`)
 - [ ] Git (`git --version`)
@@ -844,18 +908,21 @@ ssh -T git@github.com
 - [ ] VS Code extensions (ESLint, Prettier, GitLens)
 
 ### Comptes Créés
+
 - [ ] GitHub (avec repo todo-app-claude)
 - [ ] Supabase (projet floralmood-mvp)
 - [ ] Vercel (connecté à GitHub)
 - [ ] OpenAI (optionnel, pour Mois 5)
 
 ### Premier Projet
+
 - [ ] Todo API fonctionnel
 - [ ] Tests manuels réussis (4 endpoints)
 - [ ] Code poussé sur GitHub
 - [ ] README.md avec learning notes
 
 ### Documentation
+
 - [ ] Notebook apprentissage créé
 - [ ] Structure dossiers FloralMood
 - [ ] Tous les guides lus:
@@ -865,6 +932,7 @@ ssh -T git@github.com
   - [x] GETTING_STARTED.md (ce fichier)
 
 ### Prêt pour Mois 1
+
 - [ ] Calendrier bloqué (8h/semaine)
 - [ ] Ressources bookmarkées
 - [ ] Première session planifiée (Semaine 1, Lundi)
@@ -876,12 +944,14 @@ ssh -T git@github.com
 **Vous avez terminé le setup et votre premier projet avec Claude Code!**
 
 **Prochaines étapes:**
+
 1. Relire `LEARNING_PATH.md` pour vision globale
 2. Commencer Mois 1, Semaine 1 (Fondamentaux)
 3. Rejoindre communautés (Discord, Reddit)
 4. Share your progress! (LinkedIn, Twitter)
 
 **Remember:**
+
 > "La valeur en 2026 ne vient plus d'écrire du code ligne par ligne, mais d'**orchestrer des agents IA** pour construire des systèmes complexes."
 
 **Vous êtes maintenant sur le chemin pour devenir AI Product Manager!** 🚀

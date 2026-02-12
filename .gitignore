@@ -102,3 +102,6 @@ public/uploads/
 *.bak
 *.backup
 *_backup.*
+
+# Claude Code memory (private)
+.claude/
