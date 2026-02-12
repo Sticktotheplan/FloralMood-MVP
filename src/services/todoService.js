@@ -56,7 +56,7 @@ function getTodosWithFilters(page = 1, limit = 20, search = '') {
     const searchLower = search.toLowerCase().trim();
     filteredTodos = filteredTodos.filter(todo => {
       const titleMatch = todo.title.toLowerCase().includes(searchLower);
-      const descriptionMatch = todo.description.toLowerCase().includes(searchLower);
+      const descriptionMatch = (todo.description || '').toLowerCase().includes(searchLower);
       return titleMatch || descriptionMatch;
     });
   }
