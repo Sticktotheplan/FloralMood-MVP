@@ -15,12 +15,21 @@ app.use('/api/todos', todoRoutes);
 app.get('/', (req, res) => {
   res.json({
     message: 'Todo API Server is running',
-    version: '1.0.0',
+    version: '2.0.0',
     endpoints: {
       getAllTodos: 'GET /api/todos',
       createTodo: 'POST /api/todos',
       updateTodo: 'PATCH /api/todos/:id',
       deleteTodo: 'DELETE /api/todos/:id'
+    },
+    features: {
+      pagination: '?page=1&limit=20',
+      search: '?search=keyword',
+      tags: '?tags=work,urgent',
+      status: '?status=completed|active|all',
+      dateFilters: '?filter=overdue|today|upcoming|this-week',
+      dateRange: '?createdAfter=2026-01-01&createdBefore=2026-12-31',
+      sorting: '?sort=priority|dueDate|createdAt|updatedAt&order=asc|desc'
     }
   });
 });

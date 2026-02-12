@@ -8,6 +8,11 @@ Simple CRUD API built with Claude Code to learn AI-First development workflow.
 - ✅ List all todos (with pagination & search)
 - ✅ Mark todos complete/incomplete
 - ✅ Delete todos
+- ✅ **NEW:** Tags/Categories for organization
+- ✅ **NEW:** Due dates with smart filters (overdue, today, upcoming, this-week)
+- ✅ **NEW:** Priority system (1-5)
+- ✅ **NEW:** Advanced filtering (by status, tags, date range)
+- ✅ **NEW:** Multi-criteria sorting (priority, dueDate, createdAt, updatedAt)
 
 ## Tech Stack
 
@@ -38,13 +43,20 @@ Server runs on `http://localhost:3001`
 
 ### List Todos
 ```
-GET /api/todos?page=1&limit=10&search=keyword
+GET /api/todos?page=1&limit=10&search=keyword&tags=work,urgent&status=active&filter=overdue&sort=priority&order=desc
 ```
 
 **Query Parameters:**
 - `page` (optional): Page number (default: 1)
 - `limit` (optional): Items per page (default: 20, max: 100)
 - `search` (optional): Search in title and description
+- `tags` (optional): Filter by tags (comma-separated, OR logic)
+- `status` (optional): Filter by status (all, completed, active - default: all)
+- `filter` (optional): Filter by due date (overdue, today, upcoming, this-week)
+- `createdAfter` (optional): Filter todos created after date (ISO 8601)
+- `createdBefore` (optional): Filter todos created before date (ISO 8601)
+- `sort` (optional): Sort field (createdAt, updatedAt, priority, dueDate - default: createdAt)
+- `order` (optional): Sort order (asc, desc - default: desc)
 
 **Response:**
 ```json
@@ -65,9 +77,19 @@ Content-Type: application/json
 
 {
   "title": "Learn Claude Code",
-  "description": "Practice AI-First development"
+  "description": "Practice AI-First development",
+  "tags": ["learning", "AI"],
+  "dueDate": "2026-02-20",
+  "priority": 4
 }
 ```
+
+**Fields:**
+- `title` (required): Todo title (1-100 chars)
+- `description` (optional): Todo description (max 500 chars)
+- `tags` (optional): Array of tags (max 10, each max 20 chars)
+- `dueDate` (optional): Due date (ISO 8601 format)
+- `priority` (optional): Priority level 1-5 (default: 3)
 
 **Response:**
 ```json
@@ -77,6 +99,9 @@ Content-Type: application/json
     "title": "Learn Claude Code",
     "description": "Practice AI-First development",
     "completed": false,
+    "tags": ["learning", "AI"],
+    "dueDate": "2026-02-20T00:00:00.000Z",
+    "priority": 4,
     "createdAt": "2026-02-12T14:30:00.000Z",
     "updatedAt": "2026-02-12T14:30:00.000Z"
   },
@@ -90,9 +115,19 @@ PATCH /api/todos/:id
 Content-Type: application/json
 
 {
-  "completed": true
+  "completed": true,
+  "tags": ["done", "archived"],
+  "priority": 1
 }
 ```
+
+**Updatable Fields (all optional):**
+- `completed`: boolean
+- `title`: string (1-100 chars)
+- `description`: string (max 500 chars)
+- `tags`: array of strings
+- `dueDate`: ISO 8601 date or null
+- `priority`: number (1-5)
 
 ### Delete Todo
 ```
@@ -124,6 +159,10 @@ src/
 - ✅ Pagination limits (max 100 items per page)
 - ✅ UUID for IDs (not sequential, harder to guess)
 - ✅ Try/catch error handling (no internal errors exposed)
+- ✅ **NEW:** Tags validation (max 10, each max 20 chars)
+- ✅ **NEW:** Priority validation (must be integer 1-5)
+- ✅ **NEW:** Date format validation (ISO 8601)
+- ✅ **NEW:** Query parameter validation (status, filter, sort, order)
 
 ## Learning Notes
 
